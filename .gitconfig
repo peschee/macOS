@@ -1,0 +1,83 @@
+[alias]
+
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	a = add -A .
+
+	# Show verbose output about tags, branches or remotes
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
+
+	# https://filip-prochazka.com/blog/git-fixup
+	cif = "!git commit --fixup=$(git-log-vgrep-most-recent-commit 'fixup!')"
+	rbi = "rebase -i --autosquash"
+
+	# Replacing old ruby based git up command, works for git >= 2.9
+	# https://github.com/aanand/git-up
+	up = "pull --rebase --autostash"
+
+[apply]
+
+	# Detect whitespace errors when applying a patch
+	whitespace = fix
+
+[core]
+
+	# Use custom `.gitignore` and `.gitattributes`
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+
+	# Treat spaces before tabs and all kinds of trailing whitespace as an error
+	# [default] trailing-space: looks for spaces at the end of a line
+	# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+
+	# Make `git rebase` safer on OS X
+	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+	trustctime = false
+	autocrlf = input
+
+[color "branch"]
+
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+
+	meta = yellow bold
+	frag = magenta bold # line info
+	old = red # deletions
+	new = green # additions
+
+[color "status"]
+
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[help]
+
+	# Automatically correct and execute mistyped commands
+	autocorrect = 1
+
+[merge]
+
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
+
+[pull]
+
+	rebase = true
+
+[user]
+
+	name = Peter Siska
+	email = pesche@gridonic.ch
+
+[git-up "bundler"]
+	check = true
+	autoinstall = true
