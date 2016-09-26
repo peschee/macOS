@@ -57,7 +57,10 @@ plugins=(
     bower
     composer
     docker
+    docker-compose
     git-extras
+    heroku
+    last-working-dir
     npm
     symfony2
 )
