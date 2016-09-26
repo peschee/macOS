@@ -153,3 +153,6 @@ alias docker-remove-dangling='docker rmi $(docker images -f "dangling=true" -q)'
 # https://soledadpenades.com/2015/05/31/npmoffline-installing-npm-packages-from-the-cache/
 alias npmoffline='npm --cache-min 9999999'
 alias npm='npmoffline'
+
+# Quickly edit xdebug config
+alias xdb='$EDITOR $(brew --prefix)/etc/php/7.0/conf.d/ext-xdebug.ini'

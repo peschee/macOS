@@ -29,6 +29,9 @@ run 'ln -sfv $pwd/.atom/snippets.cson ~/.atom'
 run 'ln -sfv $pwd/.atom/toolbar.cson ~/.atom'
 run 'ln -sfv $pwd/.atom/styles.less ~/.atom'
 
+task 'Linking ~/bin…'
+run 'ln -sfv $pwd/bin ~'
+
 # task 'Installing Homebrew…'
 # run '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
 # run brew tap caskroom/fonts
@@ -37,10 +40,14 @@ run 'ln -sfv $pwd/.atom/styles.less ~/.atom'
 # run brew tap homebrew/homebrew-php
 #
 # task 'Installing CLI apps…'
-# run brew install git z gnu-tar
+run brew install \
+    git \
+    gnu-tar \
+    composer \
+    z
 #
 # task 'Installing desktop apps…'
-# run brew cask install
+# run brew cask install \
 #     1password \
 #     alfred \
 #     atom \
@@ -78,7 +85,7 @@ run 'ln -sfv $pwd/.atom/styles.less ~/.atom'
 # run brew cask install font-fira-code font-camingocode font-inconsolata font-anonymous-pro
 #
 # task 'Installing Atom packages/themes…'
-# run apm install emmet language-apache file-icons docblockr sort-lines todo-show \
+# run apm install emmet language-apache language-ini file-icons docblockr sort-lines todo-show \
 # pigments color-picker highlight-selected html-head-snippets pretty-json \
 # tool-bar git-control native-ui colornamer project-manager flex-tool-bar
 #

@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+# Native OSX notifications with iTerm 2
+# https://blog.liplex.de/native-osx-notifications-from-iterm-with-triggers/
+require 'rubygems'
+require 'terminal-notifier'
+
+message = ARGV[0] || "Task completed"
+title = ARGV[1] || "iTerm"
+activate = 'com.googlecode.iterm2'
+sender = 'com.googlecode.iterm2'
+
+TerminalNotifier.notify(message, :title => title, :activate => activate, :sender => sender)

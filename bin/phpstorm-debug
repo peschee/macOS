@@ -1,0 +1,13 @@
+#!/bin/bash
+
+state="$1"
+
+if [ -n "$state" ] && [ $state == "on" ]; then
+    export XDEBUG_CONFIG="idekey=PHPSTORM"
+    echo "PhpStorm debugging ON."
+elif [ -n "$state" ] && [ $state == "off" ]; then
+    unset XDEBUG_CONFIG
+    echo "PhpStorm debugging OFF."
+else
+    echo "usage: phpstorm-debug on|off"
+fi
