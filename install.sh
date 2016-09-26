@@ -79,7 +79,6 @@ brew cask install \
 task 'Installing rbenv…'
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-source ~/.zshrc && source ~/.zprofile
 rbenv install 2.3.1
 rbenv global 2.3.1
 ruby -v
@@ -124,7 +123,7 @@ sudo ln -sfv $(pwd)/etc/resolver/* /etc/resolver/
 sudo launchctl unload /System/Library/LaunchDaemons/org.apache.httpd.plist 2>/dev/null
 brew install httpd24 --with-brewed-openssl --with-mpm-event
 brew install homebrew/apache/mod_fastcgi --with-homebrew-httpd24
-ln -sfv $(pwd)/etc/apache/2.4/httpd.conf $(brew --prefix)/etc/apache/2.4/httpd.conf
+ln -sfv $(pwd)/etc/apache/2.4/httpd.conf $(brew --prefix)/etc/apache2/2.4/httpd.conf
 
 mkdir -pv ~/Projects
 mkdir -pv ~/Sites/{logs,ssl,vhosts}
