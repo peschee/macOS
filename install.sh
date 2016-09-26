@@ -50,6 +50,7 @@ brew cask install \
     alfred \
     atom \
     cleanmymac \
+    default-folder-x \
     divvy \
     dropbox \
     fantastical \
@@ -113,7 +114,7 @@ apm install \
 task 'Installing (web) development setup…'
 
 brew install php70 --build-from-source --with-fpm
-brew install php70-xdebug php70-apcu mysql dnsmasq
+brew install php70-xdebug php70-apcu php70-opcache mysql dnsmasq
 ln -sfv $(pwd)/etc/dsmasq.conf $(brew --prefix)/etc/dnsmasq.conf
 ln -sfv $(pwd)/etc/my.cnf $(brew --prefix)/etc/my.cnf
 sudo mkdir /etc/resolver
