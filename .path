@@ -17,4 +17,7 @@ PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 # fpath for zsh
 fpath=(/usr/local/share/zsh-completions $fpath)
 
+# npmbrew
+export PATH=$HOME/.npmbrew/current/bin:$PATH
+
 export PATH
