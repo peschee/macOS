@@ -39,13 +39,18 @@ run 'ln -sfv $pwd/bin ~'
 # run brew tap homebrew/versions
 # run brew tap homebrew/homebrew-php
 #
-# task 'Installing CLI apps…'
+task 'Installing CLI apps…'
 run brew install \
+    autojump \
+    composer \
     git \
     gnu-tar \
-    composer \
     z
-#
+
+task 'Setting up node…'
+run brew install node
+run npm install -g n avn avn-n grunt
+
 # task 'Installing desktop apps…'
 # run brew cask install \
 #     1password \
@@ -90,7 +95,8 @@ run brew install \
 # tool-bar git-control native-ui colornamer project-manager flex-tool-bar
 #
 # task 'Installing (web) development setup…'
-# run brew install mysql php70 php70-xdebug dnsmasq
+# run brew install php70 --build-from-source --with-fpm
+# run brew install mysql php70-xdebug php70-apcu dnsmasq
 # run echo 'address=/.dev/127.0.0.1' > $(brew --prefix)/etc/dnsmasq.conf
 # run echo 'listen-address=127.0.0.1' >> $(brew --prefix)/etc/dnsmasq.conf
 # run echo 'port=35353' >> $(brew --prefix)/etc/dnsmasq.conf

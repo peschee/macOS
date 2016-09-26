@@ -6,3 +6,5 @@ for file in ~/.{path,exports,aliases,functions,extra}; do
     [ -r "$file" ] && source "$file"
 done
 unset file
+
+ [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
