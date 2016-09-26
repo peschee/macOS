@@ -53,6 +53,7 @@ brew cask install \
     default-folder-x \
     divvy \
     dropbox \
+    evernote \
     fantastical \
     firefox \
     flux \
