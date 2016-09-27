@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 reset="\033[0m"
 headline="\033[45m\033[1;37m"
 pwd="$(pwd)"
@@ -16,67 +16,20 @@ ln -sfv $(pwd)/dotfiles/.gitconfig $(pwd)/dotfiles/.gitignore ~
 for file in $(pwd)/dotfiles/.{path,exports,aliases,functions,extra}; do
     ln -sfv "$file" ~ && source "$file"
 done
-mkdir ~/.atom
-ln -sfv $(pwd)/dotfiles/.atom/{config,keymap,snippest,toolbar}.cson ~/.atom
-ln -sfv $(pwd)/dotfiles/.atom/styles.less ~/.atom
-
 task 'Linking ~/bin…'
 ln -sfv $(pwd)/bin ~
 
 task 'Installing Homebrew…'
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew tap \
-    caskroom/fonts \
-    homebrew/dupes \
-    homebrew/versions \
-    homebrew/homebrew-php
 
-task 'Installing CLI apps…'
-brew install \
-    autojump \
-    composer \
-    git \
-    go \
-    gnu-tar \
-    z
+task 'Installing Homebrew bundle…'
+brew tap Homebrew/bundle
+brew install mas
+brew bundle
 
 task 'Setting up node…'
-brew install node
 npm install -g n npmbrew avn avn-n grunt-cli
 node -v
-
-task 'Installing desktop apps…'
-brew cask install \
-    1password \
-    alfred \
-    atom \
-    cleanmymac \
-    default-folder-x \
-    divvy \
-    dropbox \
-    evernote \
-    fantastical \
-    firefox \
-    flux \
-    font-anonymous-pro \
-    font-camingocode \
-    font-fira-code \
-    font-inconsolata \
-    google-chrome \
-    google-drive \
-    harvest \
-    hazel \
-    istat-menus \
-    iterm2 \
-    opera \
-    sequel-pro \
-    shiori \
-    sketch sketch-toolbox \
-    slack \
-    spectacle \
-    transmission \
-    vlc
-
 
 task 'Installing rbenv…'
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
@@ -85,12 +38,10 @@ rbenv install 2.3.1
 rbenv global 2.3.1
 ruby -v
 
-task 'Installing fonts…'
-brew cask install \
-    font-fira-code \
-    font-camingocode \
-    font-inconsolata \
-    font-anonymous-pro
+task 'Installing Atom config…'
+mkdir ~/.atom
+ln -sfv $(pwd)/dotfiles/.atom/{config,keymap,snippest,toolbar}.cson ~/.atom
+ln -sfv $(pwd)/dotfiles/.atom/styles.less ~/.atom
 
 task 'Installing Atom packages/themes…'
 apm install \
@@ -114,19 +65,12 @@ apm install \
     tool-bar
 
 task 'Installing (web) development setup…'
-
-brew install php70 --build-from-source --with-fpm
-brew install php70-xdebug php70-apcu php70-opcache mysql dnsmasq
 ln -sfv $(pwd)/etc/dnsmasq.conf $(brew --prefix)/etc/
 ln -sfv $(pwd)/etc/my.cnf $(brew --prefix)/etc/
 sudo mkdir /etc/resolver
 sudo ln -sfv $(pwd)/etc/resolver/* /etc/resolver/
-
 sudo launchctl unload /System/Library/LaunchDaemons/org.apache.httpd.plist 2>/dev/null
-brew install httpd24 --with-brewed-openssl --with-mpm-event
-brew install homebrew/apache/mod_fastcgi --with-homebrew-httpd24
 ln -sfv $(pwd)/etc/apache/2.4/httpd.conf $(brew --prefix)/etc/apache2/2.4/
-
 mkdir -pv ~/Projects
 mkdir -pv ~/Sites/{logs,ssl,vhosts}
 ln -sfv $(pwd)/config/_default.conf ~/Sites/vhosts/
@@ -149,8 +93,8 @@ openssl req \
   -keyout ~/Sites/ssl/private.key \
   -out ~/Sites/ssl/selfsigned.crt
 
-sudo ln -sfv $(pwd)/config/co.echo.httpfwd.plist /Library/LaunchDaemons/
-sudo launchctl load -Fw /Library/LaunchDaemons/co.echo.httpd.plist
+sudo ln -sfv $(pwd)/config/co.echo.httpdfwd.plist /Library/LaunchDaemons/
+sudo launchctl load -Fw /Library/LaunchDaemons/co.echo.httpdfwd.plist
 
 brew services restart httpd24
 brew services restart dnsmasq
