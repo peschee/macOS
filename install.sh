@@ -36,6 +36,7 @@ brew install \
     autojump \
     composer \
     git \
+    go \
     gnu-tar \
     z
 
@@ -70,6 +71,7 @@ brew cask install \
     opera \
     sequel-pro \
     shiori \
+    sketch sketch-toolbox \
     slack \
     spectacle \
     transmission \
@@ -115,15 +117,15 @@ task 'Installing (web) development setup…'
 
 brew install php70 --build-from-source --with-fpm
 brew install php70-xdebug php70-apcu php70-opcache mysql dnsmasq
-ln -sfv $(pwd)/etc/dsmasq.conf $(brew --prefix)/etc/dnsmasq.conf
-ln -sfv $(pwd)/etc/my.cnf $(brew --prefix)/etc/my.cnf
+ln -sfv $(pwd)/etc/dnsmasq.conf $(brew --prefix)/etc/
+ln -sfv $(pwd)/etc/my.cnf $(brew --prefix)/etc/
 sudo mkdir /etc/resolver
 sudo ln -sfv $(pwd)/etc/resolver/* /etc/resolver/
 
 sudo launchctl unload /System/Library/LaunchDaemons/org.apache.httpd.plist 2>/dev/null
 brew install httpd24 --with-brewed-openssl --with-mpm-event
 brew install homebrew/apache/mod_fastcgi --with-homebrew-httpd24
-ln -sfv $(pwd)/etc/apache/2.4/httpd.conf $(brew --prefix)/etc/apache2/2.4/httpd.conf
+ln -sfv $(pwd)/etc/apache/2.4/httpd.conf $(brew --prefix)/etc/apache2/2.4/
 
 mkdir -pv ~/Projects
 mkdir -pv ~/Sites/{logs,ssl,vhosts}

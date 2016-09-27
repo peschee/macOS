@@ -40,9 +40,6 @@ alias week='date +%V'
 # Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
-# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-#alias update='cd ~; sudo softwareupdate -i -a; brew update; brew upgrade --cleanup; brew cleanup --prune=0 -s; npm update -g; gem update --system; gem update'
-
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
@@ -156,3 +153,11 @@ alias npm='npmoffline'
 
 # Quickly edit xdebug config
 alias xdb='$EDITOR $(brew --prefix)/etc/php/7.0/conf.d/ext-xdebug.ini'
+
+# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+alias update='cd ~; \
+    sudo softwareupdate -i -a; \
+    brew update; brew upgrade; brew cleanup --prune=0 -s; rm -rf $(brew --cache) \
+    npm update -g; \
+    gem update --system; gem update; \
+    go get -u all'
