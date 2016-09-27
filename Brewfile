@@ -40,6 +40,7 @@ brew 'mas'
 brew 'node'
 brew 'readline'
 brew 'z'
+brew 'tig'
 brew 'zsh-completions'
 brew 'homebrew/dupes/zlib'
 brew 'homebrew/apache/httpd24', args: ['with-mpm-event']
