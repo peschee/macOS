@@ -12,6 +12,7 @@ tap 'homebrew/services'
 tap 'homebrew/versions'
 
 brew 'apr'
+brew 'ack'
 brew 'pkg-config'
 brew 'makedepend'
 brew 'openssl'
