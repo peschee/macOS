@@ -38,6 +38,7 @@ brew 'libtiff'
 brew 'imagemagick'
 brew 'libxml2'
 brew 'mas'
+brew 'maven'
 brew 'node'
 brew 'readline'
 brew 'z'
@@ -88,6 +89,7 @@ cask 'transmission'
 cask 'typinator'
 cask 'vlc'
 cask 'wkhtmltopdf'
+cask 'betterzip'
 
 mas 'Noizio (1.5)', id: 928871589
 mas 'JPEGmini (1.9.9)', id: 498944723
