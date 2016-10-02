@@ -13,6 +13,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 task 'Linking dotfiles…'
 ln -sfv $(pwd)/dotfiles/.zshrc $(pwd)/dotfiles/.zprofile ~
 ln -sfv $(pwd)/dotfiles/.gitconfig $(pwd)/dotfiles/.gitignore ~
+ln -sfv $(pwd)/dotfiles/.gemrc ~
 for file in $(pwd)/dotfiles/.{path,exports,aliases,functions,extra}; do
     ln -sfv "$file" ~ && source "$file"
 done
