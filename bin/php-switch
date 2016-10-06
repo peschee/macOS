@@ -1,4 +1,5 @@
 #!/bin/bash
+#
 # Creator: Phil Cook
 # Email: phil@phil-cook.com
 # Twitter: @p_cook
@@ -9,10 +10,6 @@ php_array=("php53" "php54" "php55" "php56" "php70")
 php_installed_array=()
 php_version="php$1"
 php_opt_path="$brew_prefix\/opt\/"
-
-php5_module="php5_module"
-php7_module="php7_module"
-php_module="$php5_module"
 
 # Has the user submitted a version required
 if [[ -z "$1" ]]
@@ -50,7 +47,6 @@ then
         done
         brew link "$php_version"
         brew services start "$php_version"
-#        ln -sf `brew list $php_version | grep 'bin/php$'` ~/bin/php
 
         echo "All done!"
     else

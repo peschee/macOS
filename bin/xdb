@@ -1,0 +1,17 @@
+#!/bin/bash
+
+state="$1"
+
+# TODO: Make this dynamic
+php_config_dir="/usr/local/etc/php/7.0/conf.d"
+xdebug_config_base="_ext-xdebug.ini"
+
+if [ -n "$state" ] && [ $state == "on" ]; then
+    ln -sf $php_config_dir/$xdebug_config_base.on $php_config_dir/ext-xdebug.ini
+    echo "Xdebug ON."
+elif [ -n "$state" ] && [ $state == "off" ]; then
+    ln -sf $php_config_dir/$xdebug_config_base.off $php_config_dir/ext-xdebug.ini
+    echo "Xdebug OFF."
+else
+    echo "usage: xdb on|off"
+fi
