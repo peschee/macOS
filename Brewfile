@@ -58,6 +58,7 @@ cask '1password'
 cask 'alfred'
 cask 'atom'
 cask 'cleanmymac'
+cask 'dash'
 cask 'default-folder-x'
 cask 'divvy'
 cask 'dropbox'
@@ -103,6 +104,5 @@ mas 'Wunderlist (3.4.5)', id: 410628904
 mas 'Tweetbot (2.4.4)', id: 557168941
 mas 'JPEGmini (1.9.9)', id: 498944723
 mas 'Pages (6.0)', id: 409201541
-mas 'Dash (3.3.1)', id: 449589707
 mas 'Numbers (4.0)', id: 409203825
 mas 'DiveLogManager (3.4.28)', id: 404897036
