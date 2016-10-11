@@ -94,10 +94,15 @@ cask 'vlc'
 cask 'wkhtmltopdf'
 cask 'betterzip'
 
-mas 'Noizio (1.5)', id: 928871589
-mas 'JPEGmini (1.9.9)', id: 498944723
-mas 'DiveLogManager (3.4.27)', id: 404897036
-mas 'SiteSucker (2.8.4)', id: 442168834
-mas 'Dash (3.3.1)', id: 449589707
-mas 'Wunderlist (3.4.4)', id: 410628904
 mas 'SonicWALL Mobile Connect (4.0.8)', id: 822514576
+mas 'Keynote (7.0)', id: 409183694
+mas 'Mousepose (3.2.7)', id: 405904955
+mas 'SiteSucker (2.9)', id: 442168834
+mas 'Noizio (1.5)', id: 928871589
+mas 'Wunderlist (3.4.5)', id: 410628904
+mas 'Tweetbot (2.4.4)', id: 557168941
+mas 'JPEGmini (1.9.9)', id: 498944723
+mas 'Pages (6.0)', id: 409201541
+mas 'Dash (3.3.1)', id: 449589707
+mas 'Numbers (4.0)', id: 409203825
+mas 'DiveLogManager (3.4.28)', id: 404897036
