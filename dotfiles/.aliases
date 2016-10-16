@@ -157,4 +157,5 @@ alias update='cd ~; \
     brew update; brew upgrade; brew cleanup --prune=0 -s; rm -rf $(brew --cache) \
     npm update -g; \
     gem update --system; gem update; \
+    apm update -c false; \
     go get -u all'

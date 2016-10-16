@@ -72,3 +72,5 @@ source $ZSH/oh-my-zsh.sh
 
 # Initialize avn
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
+
+export PATH="$HOME/.yarn/bin:$PATH"
