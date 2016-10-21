@@ -39,7 +39,6 @@
 	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
 	trustctime = false
 	autocrlf = input
-	editor = atom --wait
 
 [color "branch"]
 

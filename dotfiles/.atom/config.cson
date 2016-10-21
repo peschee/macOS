@@ -18,6 +18,7 @@
       ".idea"
     ]
     projectHome: "/Users/psiska/Projects"
+    telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
       "chester-atom-syntax"
