@@ -96,6 +96,7 @@ openssl req \
 
 sudo ln -sfv $(pwd)/config/co.echo.httpdfwd.plist /Library/LaunchDaemons/
 sudo launchctl load -Fw /Library/LaunchDaemons/co.echo.httpdfwd.plist
+sudo chown root:wheel /Library/LaunchDaemons/co.echo.httpdfwd.plist
 
 brew services restart httpd24
 brew services restart dnsmasq
