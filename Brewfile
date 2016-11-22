@@ -46,6 +46,7 @@ brew 'unixodbc'
 brew 'xz'
 brew 'z'
 brew 'zsh-completions'
+brew 'watchman'
 
 brew 'homebrew/apache/httpd24', args: ['with-mpm-event']
 brew 'homebrew/apache/mod_fastcgi', args: ['with-homebrew-httpd24']

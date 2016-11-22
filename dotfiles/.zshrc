@@ -62,14 +62,16 @@ plugins=(
     last-working-dir
     npm
     symfony2
+    zsh-completions
 )
 
 source $ZSH/oh-my-zsh.sh
+
+# Initialize completions
+autoload -U compinit && compinit
 
 # Initialize autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 # Initialize avn
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
-
-export PATH="$HOME/.yarn/bin:$PATH"
