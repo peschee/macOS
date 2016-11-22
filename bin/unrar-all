@@ -1,0 +1,67 @@
+#!/bin/bash
+
+WORKING_DIR=$(pwd)
+DIRS=$@
+PROCESSED=()
+ERRORS=()
+
+for dir in $DIRS
+do
+    cd $dir
+    echo ""
+    echo "Processing: $dir"
+    echo "================================================================================"
+
+    for file in $(ls *.rar)
+    do
+        unrar e -y -o+ -p- $file
+
+        if [ $? -eq 0 ]; then
+            echo "Successfully unpacked; purging files."
+
+            rm -f *.rar
+            rm -f *.r[0-9][0-9]
+            rm -f *.s[0-9][0-9]
+            rm -f *.t[0-9][0-9]
+
+            rm -rf @eaDir
+
+            PROCESSED+=("$dir")
+        else
+            echo "Unable to unpack."
+
+            ERRORS+=("$dir")
+        fi
+    done
+
+    echo "Returning to $WORKING_DIR"
+    cd $WORKING_DIR
+done
+
+echo ""
+echo "Unprocessed dirs:"
+echo "================================================================================"
+echo ""
+echo ${ERRORS[@]}
+echo ""
+
+for errorDir in "${ERRORS[@]}"
+do
+    echo "- $errorDir"
+done
+
+echo ""
+
+echo ""
+echo "Processed dirs:"
+echo "================================================================================"
+echo ""
+echo ${PROCESSED[@]}
+echo ""
+
+for processedDir in "${PROCESSED[@]}"
+do
+    echo "+ $processedDir"
+done
+
+echo ""
