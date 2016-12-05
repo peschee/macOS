@@ -237,3 +237,8 @@ function jhome () {
   echo "java -version:"
   java -version
 }
+
+# Display all versions available for the given parameter
+function npmVersions() {
+    npm view $1 time --registry=https://registry.npmjs.org
+}

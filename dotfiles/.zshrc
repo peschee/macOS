@@ -62,6 +62,7 @@ plugins=(
     last-working-dir
     npm
     symfony2
+    wp-cli
     zsh-completions
 )
 
