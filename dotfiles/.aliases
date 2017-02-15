@@ -158,4 +158,5 @@ alias update='cd ~; \
     npm update -g; \
     gem update --system; gem update; \
     apm update -c false; \
+    c global update -o; \
     go get -u all'

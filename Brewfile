@@ -53,11 +53,13 @@ brew 'homebrew/apache/httpd24', args: ['with-mpm-event']
 brew 'homebrew/apache/mod_fastcgi', args: ['with-homebrew-httpd24']
 brew 'homebrew/dupes/zlib'
 brew 'homebrew/php/composer'
+brew 'homebrew/php/php70'
 brew 'homebrew/php/php70-apcu'
+brew 'homebrew/php/php70-apcu-bc'
 brew 'homebrew/php/php70-imagick'
+brew 'homebrew/php/php70-intl'
 brew 'homebrew/php/php70-opcache'
 brew 'homebrew/php/php70-xdebug'
-brew 'homebrew/php/php70'
 
 cask '1password'
 cask 'alfred'
