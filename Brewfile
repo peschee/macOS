@@ -56,7 +56,7 @@ brew 'homebrew/php/composer'
 brew 'homebrew/php/php70'
 brew 'homebrew/php/php70-apcu'
 brew 'homebrew/php/php70-apcu-bc'
-brew 'homebrew/php/php70-imagick'
+brew 'homebrew/php/php70-imagick', args: ['build-from-source']
 brew 'homebrew/php/php70-intl'
 brew 'homebrew/php/php70-opcache'
 brew 'homebrew/php/php70-xdebug'
