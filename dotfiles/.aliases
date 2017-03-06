@@ -146,6 +146,8 @@ alias znc-tunnel='ssh -f -L 65432:localhost:64545 -N uberspace'
 
 # Docker
 alias docker-remove-dangling='docker rmi $(docker images -f "dangling=true" -q)'
+alias docker-remove-containers='docker rm $(docker ps -a -q)'
+alias docker-remove-images='docker rmi $(docker images -q)'
 
 # https://soledadpenades.com/2015/05/31/npmoffline-installing-npm-packages-from-the-cache/
 alias npmoffline='npm --cache-min 9999999'
