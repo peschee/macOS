@@ -1,0 +1,2 @@
+# https://github.com/hechoendrupal/drupal-console
+source "$HOME/.console/console.rc" 2>/dev/null

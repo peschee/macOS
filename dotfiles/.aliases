@@ -153,6 +153,10 @@ alias docker-remove-images='docker rmi $(docker images -q)'
 alias npmoffline='npm --cache-min 9999999'
 alias npm='npmoffline'
 
+# Cachalot
+alias cachalot-on='eval $(cachalot env)'
+alias cachalot-off='unset $(env | grep DOCKER | awk -F'=' '{print $1}' | xargs)'
+
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='cd ~; \
     sudo softwareupdate -i -a; \
@@ -160,6 +164,6 @@ alias update='cd ~; \
     npm update -g; \
     gem update --system; gem update; \
     apm update -c false; \
-    c self-update \
+    c self-update; \
     c global update -o; \
-    go get -u all'
+    go get -u all;'
