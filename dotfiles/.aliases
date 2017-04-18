@@ -166,4 +166,5 @@ alias update='cd ~; \
     apm update -c false; \
     c self-update; \
     c global update -o; \
-    go get -u all;'
+    go get -u all; \
+    j --purge'

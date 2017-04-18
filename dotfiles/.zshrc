@@ -76,5 +76,3 @@ autoload -U compinit && compinit
 
 # Initialize avn
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
-
-export PATH="$HOME/.yarn/bin:$PATH"
