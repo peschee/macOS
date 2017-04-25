@@ -7,4 +7,5 @@
 
 # TODO
 
-- Make configuration parameterizeable (e.g. username, directories etc.)
+- [] Make configuration parameterizeable (e.g. username, directories etc.)
+- [] Add zsh syntax highlighting (https://github.com/zsh-users/zsh-syntax-highlighting)
