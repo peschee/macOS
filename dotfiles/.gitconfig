@@ -19,6 +19,9 @@
 	# https://github.com/aanand/git-up
 	up = "pull --rebase --autostash"
 
+	# Delete local merged branches
+	dlmb = "!git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git"
+
 [apply]
 
 	# Detect whitespace errors when applying a patch
