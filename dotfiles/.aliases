@@ -157,6 +157,10 @@ alias npm='npmoffline'
 alias cachalot-on='eval $(cachalot env)'
 alias cachalot-off='unset $(env | grep DOCKER | awk -F'=' '{print $1}' | xargs)'
 
+# Mailhog
+alias mailhog-start='docker run -d -p 1025:1025 -p 8025:8025 --name mailhog mailhog/mailhog'
+alias mailhog-stop='docker rm -f mailhog'
+
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='cd ~; \
     sudo softwareupdate -i -a; \
