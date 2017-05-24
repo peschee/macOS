@@ -76,3 +76,9 @@ autoload -U compinit && compinit
 
 # Initialize avn
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
+
+# Init rbenv
+# @see https://github.com/rbenv/rbenv
+eval "$(rbenv init -)"
+
+export PATH="$HOME/.yarn/bin:$PATH"
