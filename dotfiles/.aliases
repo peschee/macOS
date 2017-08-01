@@ -152,6 +152,7 @@ alias docker-remove-images='docker rmi $(docker images -q)'
 # https://soledadpenades.com/2015/05/31/npmoffline-installing-npm-packages-from-the-cache/
 alias npmoffline='npm --cache-min 9999999'
 alias npm='npmoffline'
+alias yarnp='yarn --pure-lockfile'
 
 # Cachalot
 alias cachalot-on='eval $(cachalot env)'

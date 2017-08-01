@@ -17,9 +17,6 @@ PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 # fpath for zsh
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-# npmbrew
-PATH=$HOME/.npmbrew/current/bin:$PATH
-
 # yarn
 PATH="$HOME/.yarn/bin:$PATH"
 
