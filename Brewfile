@@ -46,12 +46,12 @@ brew 'unixodbc'
 brew 'unrar'
 brew 'xz'
 brew 'z'
+brew 'zlib'
 brew 'zsh-completions'
 brew 'watchman'
 
 brew 'homebrew/apache/httpd24', args: ['with-mpm-event']
 brew 'homebrew/apache/mod_fastcgi', args: ['with-homebrew-httpd24']
-brew 'homebrew/dupes/zlib'
 brew 'homebrew/php/composer'
 brew 'homebrew/php/php70'
 brew 'homebrew/php/php70-apcu'
