@@ -1,0 +1,7 @@
+brew 'homebrew/php/php71'
+brew 'homebrew/php/php71-apcu'
+brew 'homebrew/php/php71-apcu-bc'
+brew 'homebrew/php/php71-imagick', args: ['build-from-source']
+brew 'homebrew/php/php71-intl'
+brew 'homebrew/php/php71-opcache'
+brew 'homebrew/php/php71-xdebug'
