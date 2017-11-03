@@ -74,11 +74,15 @@ autoload -U compinit && compinit
 # Initialize autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
-# Initialize avn
-[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
-
 # Init rbenv
 # @see https://github.com/rbenv/rbenv
 eval "$(rbenv init -)"
 
+# Initialize yarn
 export PATH="$HOME/.yarn/bin:$PATH"
+
+# Initialize n
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
+# Initialize avn
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
