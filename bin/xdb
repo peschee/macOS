@@ -1,17 +1,32 @@
 #!/bin/bash
 
 state="$1"
+php_version_string=`php -v`
+php_version=`echo $php_version_string | grep -m 1 -o '\d.\d' | head -n 1`
+php_config_dir="/usr/local/etc/php/$php_version/conf.d"
+xdebug_config_base="ext-xdebug"
 
-# TODO: Make this dynamic
-php_config_dir="/usr/local/etc/php/7.0/conf.d"
-xdebug_config_base="_ext-xdebug.ini"
+if [ ! -d "$php_config_dir" ]; then
+    echo "Could not find configuration directory '$php_config_dir'"
+    exit 1
+fi
 
 if [ -n "$state" ] && [ $state == "on" ]; then
-    ln -sf $php_config_dir/$xdebug_config_base.on $php_config_dir/ext-xdebug.ini
+
+    if [ ! -e "$php_config_dir/ext-xdebug.off" ]; then
+        echo "Xdebug already ON."
+        exit
+    fi
+
+    mv $php_config_dir/ext-xdebug.off $php_config_dir/ext-xdebug.ini
     echo "Xdebug ON."
-elif [ -n "$state" ] && [ $state == "off" ]; then
-    ln -sf $php_config_dir/$xdebug_config_base.off $php_config_dir/ext-xdebug.ini
-    echo "Xdebug OFF."
-else
-    echo "usage: xdb on|off"
+    exit
 fi
+
+if [ -n "$state" ] && [ $state == "off" ]; then
+    mv $php_config_dir/ext-xdebug.ini $php_config_dir/ext-xdebug.off
+    echo "Xdebug OFF."
+    exit
+fi
+
+echo "usage: xdb on|off"
