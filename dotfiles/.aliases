@@ -151,7 +151,6 @@ alias docker-remove-images='docker rmi $(docker images -q)'
 
 # https://soledadpenades.com/2015/05/31/npmoffline-installing-npm-packages-from-the-cache/
 alias npmoffline='npm --cache-min 9999999'
-alias npm='npmoffline'
 alias yarnp='yarn --pure-lockfile'
 
 # Mailhog
@@ -161,7 +160,8 @@ alias mailhog-stop='docker rm -f mailhog'
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='cd ~; \
     sudo softwareupdate -i -a; \
-    brew update; brew upgrade; brew cleanup --prune=0 -s; rm -rf $(brew --cache) \
+    brew update; brew upgrade; brew cu; \
+    brew cleanup --prune=0 -s; rm -rf $(brew --cache) \
     npm update -g; \
     gem update --system; gem update; \
     apm update -c false; \

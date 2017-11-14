@@ -22,6 +22,10 @@
 	# Delete local merged branches
 	dlmb = "!git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git"
 
+	# https://gist.github.com/peschee/6e8f490167037cb2a3489052501ae0bb
+	fixup = !sh -c 'REV=$(git rev-parse $1) && git commit --fixup $@ && git rebase -i --autosquash $REV^' -
+	squash = !sh -c 'REV=$(git rev-parse $1) && git commit --squash $@ && git rebase -i --autosquash $REV^' -
+
 [apply]
 
 	# Detect whitespace errors when applying a patch

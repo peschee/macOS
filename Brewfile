@@ -10,6 +10,7 @@ tap 'homebrew/dupes'
 tap 'homebrew/php'
 tap 'homebrew/services'
 tap 'homebrew/versions'
+tap 'buo/cask-upgrade'
 
 brew 'ack'
 brew 'ant'

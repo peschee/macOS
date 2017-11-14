@@ -86,3 +86,5 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 
 # Initialize avn
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
