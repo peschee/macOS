@@ -11,14 +11,6 @@ php_installed_array=()
 php_version="php$1"
 php_opt_path="$brew_prefix\/opt\/"
 
-# Has the user submitted a version required
-if [[ -z "$1" ]]
-then
-    echo "usage: php-switch version"; echo;
-    echo "    version    one of:" ${brew_array[@]};
-    exit
-fi
-
 # What versions of php are installed via brew
 for i in ${php_array[*]}
     do
@@ -28,7 +20,14 @@ for i in ${php_array[*]}
         fi
 done
 
-echo $php_installed_array
+# Has the user submitted a version required
+if [[ -z "$1" ]]
+then
+    echo "usage: php-switch version"; echo;
+    echo "    version one of:" ${brew_array[@]};
+    echo "    installed:     " ${php_installed_array[@]};
+    exit
+fi
 
 # Check that the requested version is supported
 if [[ " ${php_array[*]} " == *"$php_version"* ]]
