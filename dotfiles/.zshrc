@@ -88,3 +88,6 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+# Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
