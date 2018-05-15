@@ -46,7 +46,7 @@ then
                 brew unlink $i
             fi
         done
-        brew link "$php_version"
+        brew link --force "$php_version"
         brew services start "$php_version"
 
         echo "All done!"
