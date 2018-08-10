@@ -1,9 +1,8 @@
+# fpath for zsh
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 # Add local bin directories to `$PATH`
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-
-# Setup rbenv
-PATH="$HOME/.rbenv/bin:$PATH"
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Add composer to the `$PATH`
 PATH="$PATH:$HOME/.composer/vendor/bin"
@@ -14,15 +13,8 @@ PATH="$HOME/bin:$PATH"
 # Add gnu tar
 PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 
-# fpath for zsh
-fpath=(/usr/local/share/zsh-completions $fpath)
-
 # yarn
 PATH="$HOME/.yarn/bin:$PATH"
 
-# golang
-PATH=$PATH:/usr/local/opt/go/libexec/bin
-export GOPATH=$HOME/.go
-PATH=$PATH:$GOPATH/bin
-
 export PATH
+export fpath

@@ -164,8 +164,6 @@ alias update='cd ~; \
     brew cleanup --prune=0 -s; rm -rf $(brew --cache) \
     npm update -g; \
     gem update --system; gem update; \
-    apm update -c false; \
     c self-update; \
     c global update -o; \
-    go get -u all; \
     j --purge'

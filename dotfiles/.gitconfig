@@ -83,8 +83,4 @@
 [user]
 
 	name = Peter Siska
-	email = pesche@gridonic.ch
-
-[git-up "bundler"]
-	check = true
-	autoinstall = true
+	email = psiska@inventage.com
