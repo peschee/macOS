@@ -77,6 +77,9 @@ source $ZSH/oh-my-zsh.sh
 # Initialize completions
 autoload -U compinit && compinit
 
+# @see https://stackoverflow.com/questions/20037364/why-zsh-tries-to-expand-and-bash-does-not
+setopt nonomatch
+
 # Initialize z
 [[ -s $(brew --prefix)/etc/profile.d/z.sh ]] && . $(brew --prefix)/etc/profile.d/z.sh
 
