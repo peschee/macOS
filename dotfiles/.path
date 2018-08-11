@@ -1,20 +1,16 @@
-# fpath for zsh
-fpath=(/usr/local/share/zsh-completions $fpath)
-
-# Add local bin directories to `$PATH`
+# Add local bin directories
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
-# Add composer to the `$PATH`
+# Add composer bin directory
 PATH="$PATH:$HOME/.composer/vendor/bin"
 
-# Add `~/bin` to the `$PATH`
+# Add `~/bin`
 PATH="$HOME/bin:$PATH"
 
 # Add gnu tar
 PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 
-# yarn
+# Add yarn
 PATH="$HOME/.yarn/bin:$PATH"
 
 export PATH
-export fpath
