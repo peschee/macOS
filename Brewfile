@@ -25,14 +25,15 @@ tap 'homebrew/services'
 #brew 'dnsmasq', service_restart: true
 #brew 'freetype'
 #brew 'gettext'
-brew 'git-extras'
 brew 'git'
+brew 'git-extras'
 brew 'gnu-tar'
 #brew 'go'
 #brew 'httpd', args: ['with-mpm-event']
 #brew 'icu4c'
 #brew 'imagemagick'
 #brew 'jpeg'
+brew 'jenv'
 #brew 'libpng'
 #brew 'libtiff'
 #brew 'libtool'
@@ -106,4 +107,23 @@ cask 'font-inconsolata'
 cask 'font-fira-mono-for-powerline'
 cask 'font-menlo-for-powerline'
 cask 'font-meslo-for-powerline'
+
+# App Store Applications
+mas 'Affinity', id: 824183456
+mas 'Bear', id: 1091189122
+#mas 'DiveLogManager', id: 404897036
+mas 'GarageBand', id: 682658836
+mas 'iMovie', id: 408981434
+mas 'JPEGmini', id: 498944723
+mas 'Keynote', id: 409183694
+#mas 'Mousepose', id: 405904955
+mas 'Noizio', id: 928871589
+mas 'Numbers', id: 409203825
+mas 'Pages', id: 409201541
+#mas 'SonicWALL Mobile Connect', id: 822514576
+#mas 'SiteSucker', id: 442168834
+mas 'Slack', id: 803453959
+mas 'Telegram', id: 747648890
+mas 'Tweetbot', id: 557168941
+mas 'Wunderlist', id: 410628904
 
