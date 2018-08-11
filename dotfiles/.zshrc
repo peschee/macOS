@@ -84,13 +84,21 @@ autoload -U compinit && compinit
 # @see https://github.com/rbenv/rbenv
 #eval "$(rbenv init -)"
 
-# Initialize n
+# n
 #export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
-# Initialize avn
+# avn
 #[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
-#export PATH="$HOME/.jenv/bin:$PATH"
-#eval "$(jenv init -)"
+
+# jenv
+# @see http://www.jenv.be/
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 
 # Add Visual Studio Code (code)
 #export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# iterm2 shell integration
+# @see https://www.iterm2.com/documentation-shell-integration.html
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
