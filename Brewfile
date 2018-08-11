@@ -100,6 +100,7 @@ brew 'z'
 #cask 'virtualbox'
 #cask 'vlc'
 #cask 'wkhtmltopdf'
+cask 'visual-studio-code'
 
 # Fonts
 cask 'font-fira-code'
@@ -114,7 +115,6 @@ mas 'Bear', id: 1091189122
 #mas 'DiveLogManager', id: 404897036
 mas 'GarageBand', id: 682658836
 mas 'iMovie', id: 408981434
-mas 'JPEGmini', id: 498944723
 mas 'Keynote', id: 409183694
 #mas 'Mousepose', id: 405904955
 mas 'Noizio', id: 928871589

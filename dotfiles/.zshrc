@@ -95,9 +95,6 @@ autoload -U compinit && compinit
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-# Add Visual Studio Code (code)
-#export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-
 # iterm2 shell integration
 # @see https://www.iterm2.com/documentation-shell-integration.html
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
