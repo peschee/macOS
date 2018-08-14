@@ -17,7 +17,7 @@ for file in $(pwd)/dotfiles/.{path,exports,aliases,functions,extra}; do
     ln -sfv "$file" ~ && source "$file"
 done
 task 'Copying scripts to ~/bin…'
-mkdir -p ~/bin && cp -Rf $(pwd)/bin/* ~/bin
+mkdir -pv ~/bin && cp -Rfv $(pwd)/bin/* ~/bin
 
 which -s brew
 if [[ $? != 0 ]] ; then
@@ -36,7 +36,7 @@ echo "node: $(node -v)"
 echo "npm: $(npm -v)"
 npm install -g n avn avn-n
 avn setup
-sudo mkdir -p /usr/local/n && sudo chown -R $(whoami) /usr/local/n
+sudo mkdir -pv /usr/local/n && sudo chown -R $(whoami) /usr/local/n
 
 # task 'Installing rbenv…'
 # git clone https://github.com/rbenv/rbenv.git ~/.rbenv
