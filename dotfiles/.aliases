@@ -22,9 +22,6 @@ fi
 # List all files colorized in long format
 alias l="ls -AlFh ${colorflag}"
 
-# List all files colorized in long format, including dot files
-alias la="ls -laF ${colorflag}"
-
 # List only directories
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 
@@ -84,10 +81,8 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 # Usage: `mergepdf -o output.pdf input{1,2,3}.pdf`
 alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
 
-# Disable Spotlight
+# Disable / enable Spotlight
 alias spotoff="sudo mdutil -a -i off"
-
-# Enable Spotlight
 alias spoton="sudo mdutil -a -i on"
 
 # PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
@@ -120,23 +115,10 @@ alias reload="exec $SHELL -l"
 command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.eu/"
 
 # Homebrew
-alias bu='brew up; brew upgrade; brew cleanup --purge'
+alias bu='brew update; brew upgrade; brew cask upgrade; brew cleanup --prune=0 -s; rm -rf $(brew --cache)'
 
 # Git stats
 alias git-stats='git shortlog -s -n'
-
-# Vendor everything
-# http://ryan.mcgeary.org/2011/02/09/vendor-everything-still-applies/
-alias b="bundle"
-alias bui="b install --path vendor"
-alias buil="bi --local"
-alias buu="b update"
-alias bue="b exec"
-alias buinit="bi && b package && echo 'vendor/ruby' >> .gitignore"
-
-# https://twitter.com/addyosmani/status/715552965461983233
-alias weather='function _weather(){ curl -4 wttr.in/$1; };_weather'
-alias moon="curl -4 wttr.in/Moon"
 
 # https://jenssegers.com/83/list-outdated-composer-packages
 alias climb='composer outdated --outdated --direct'
@@ -159,8 +141,7 @@ alias mailhog-stop='docker rm -f mailhog'
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='cd ~; \
     sudo softwareupdate -i -a; \
-    brew update; brew upgrade; brew cask upgrade; \
-    brew cleanup --prune=0 -s; rm -rf $(brew --cache) \
+    bu; \
     npm update -g; \
     gem update --system; gem update; \
     c self-update; \

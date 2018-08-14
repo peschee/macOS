@@ -15,8 +15,7 @@ task 'Linking dotfiles…'
 ln -sfv $(pwd)/dotfiles/.zshrc $(pwd)/dotfiles/.zprofile ~
 ln -sfv $(pwd)/dotfiles/.gitconfig $(pwd)/dotfiles/.gitignore ~
 for file in $(pwd)/dotfiles/.{path,exports,aliases,functions,extra}; do
-
-    ln -sfv "$file" ~ && source "$file"
+    [ -r "$file" ] && ln -sfv "$file" ~ && source "$file"
 done
 task 'Copying scripts to ~/bin…'
 mkdir -pv ~/bin && cp -Rfv $(pwd)/bin/* ~/bin
