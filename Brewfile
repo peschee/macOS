@@ -29,6 +29,7 @@ brew 'git-extras'
 brew 'gnu-tar'
 #brew 'go'
 #brew 'httpd', args: ['with-mpm-event']
+brew 'httpie'
 #brew 'icu4c'
 #brew 'imagemagick'
 #brew 'jpeg'

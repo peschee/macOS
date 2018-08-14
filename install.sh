@@ -8,12 +8,14 @@ task() {
 }
 
 task 'Install oh-my-zsh'
+# @see https://github.com/robbyrussell/oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 task 'Linking dotfiles…'
 ln -sfv $(pwd)/dotfiles/.zshrc $(pwd)/dotfiles/.zprofile ~
 ln -sfv $(pwd)/dotfiles/.gitconfig $(pwd)/dotfiles/.gitignore ~
 for file in $(pwd)/dotfiles/.{path,exports,aliases,functions,extra}; do
+
     ln -sfv "$file" ~ && source "$file"
 done
 task 'Copying scripts to ~/bin…'
@@ -44,32 +46,6 @@ sudo mkdir -pv /usr/local/n && sudo chown -R $(whoami) /usr/local/n
 # rbenv install 2.3.1
 # rbenv global 2.3.1
 # ruby -v
-
-# task 'Installing Atom config…'
-# mkdir ~/.atom
-# ln -sfv $(pwd)/dotfiles/.atom/{config,keymap,snippest,toolbar}.cson ~/.atom
-# ln -sfv $(pwd)/dotfiles/.atom/styles.less ~/.atom
-
-# task 'Installing Atom packages/themes…'
-# apm install \
-#     color-picker \
-#     colornamer \
-#     docblockr \
-#     emmet \
-#     file-icons \
-#     flex-tool-bar
-#     git-control \
-#     highlight-selected \
-#     html-head-snippets \
-#     language-apache \
-#     language-ini \
-#     native-ui \
-#     pigments \
-#     pretty-json \
-#     project-manager \
-#     sort-lines \
-#     todo-show \
-#     tool-bar
 
 # task 'Installing (web) development setup…'
 # ln -sfv $(pwd)/etc/dnsmasq.conf $(brew --prefix)/etc/
