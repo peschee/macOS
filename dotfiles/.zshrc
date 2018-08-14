@@ -87,11 +87,9 @@ setopt nonomatch
 # @see https://github.com/rbenv/rbenv
 #eval "$(rbenv init -)"
 
-# n
-#export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-
 # avn
-#[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
+# @see https://github.com/wbyoung/avn
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
 
 # jenv
 # @see http://www.jenv.be/

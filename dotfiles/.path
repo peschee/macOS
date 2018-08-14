@@ -4,8 +4,8 @@ PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 # Add composer bin directory
 PATH="$PATH:$HOME/.composer/vendor/bin"
 
-# Add `~/bin` and `~/bin/extra`
-PATH="$HOME/bin/extra:$HOME/bin:$PATH"
+# Add `~/bin`
+PATH="$HOME/bin:$PATH"
 
 # Add gnu tar
 PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"

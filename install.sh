@@ -16,8 +16,8 @@ ln -sfv $(pwd)/dotfiles/.gitconfig $(pwd)/dotfiles/.gitignore ~
 for file in $(pwd)/dotfiles/.{path,exports,aliases,functions,extra}; do
     ln -sfv "$file" ~ && source "$file"
 done
-task 'Linking ~/bin…'
-ln -sfv $(pwd)/bin ~
+task 'Copying scripts to ~/bin…'
+mkdir -p ~/bin && cp -Rf $(pwd)/bin/* ~/bin
 
 which -s brew
 if [[ $? != 0 ]] ; then
@@ -31,9 +31,12 @@ fi
 task 'Installing Homebrew bundle…'
 brew bundle
 
-# task 'Setting up node…'
-# npm install -g n npmbrew avn avn-n grunt-cli
-# node -v
+task 'Installing npm dependencies…'
+echo "node: $(node -v)"
+echo "npm: $(npm -v)"
+npm install -g n avn avn-n
+avn setup
+sudo mkdir -p /usr/local/n && sudo chown -R $(whoami) /usr/local/n
 
 # task 'Installing rbenv…'
 # git clone https://github.com/rbenv/rbenv.git ~/.rbenv
@@ -104,3 +107,7 @@ brew bundle
 # brew services restart httpd
 # brew services restart dnsmasq
 # brew services restart mysql
+
+task 'Installing additional scripts…'
+# @see https://github.com/bntzio/wipe-modules
+curl -L https://raw.githubusercontent.com/bntzio/wipe-modules/master/wipe-modules.sh -o ~/bin/wipe-modules && chmod +x ~/bin/wipe-modules
