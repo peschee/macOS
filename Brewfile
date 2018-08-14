@@ -40,7 +40,9 @@ brew 'jenv'
 #brew 'makedepend'
 brew 'maven'
 brew 'mas'
+brew 'mkcert'
 brew 'mysql', service_restart: true
+brew 'nss'
 brew 'node'
 #brew 'openssl'
 #brew 'pcre'
@@ -56,6 +58,7 @@ brew 'z'
 brew 'watchman'
 brew 'wget'
 brew 'yarn'
+brew 'youtube-dl'
 
 #brew 'homebrew/php/composer'
 #brew 'homebrew/php/php70'
@@ -67,23 +70,20 @@ brew 'yarn'
 #brew 'homebrew/php/php70-xdebug'
 
 #cask '1password'
-#cask 'alfred'
-#cask 'atom'
+cask 'alfred'
 cask 'betterzip'
-#cask 'cleanmymac'
-#cask 'colorpicker-skalacolor'
+cask 'cleanmymac'
+cask 'colorpicker-skalacolor'
 cask 'dash'
 cask 'default-folder-x'
-#cask 'divvy'
-#cask 'dropbox'
+cask 'dropbox'
 cask 'dropshare'
 #cask 'evernote'
 #cask 'fantastical'
 #cask 'firefox'
 #cask 'google-chrome'
-#cask 'harvest'
-#cask 'hazel'
-#cask 'istat-menus'
+cask 'hazel'
+cask 'istat-menus'
 cask 'iterm2'
 cask 'name-mangler'
 #cask 'opera'
@@ -91,7 +91,7 @@ cask 'sequel-pro'
 #cask 'sketch'
 #cask 'slack'
 #cask 'sonos'
-#cask 'spectacle'
+cask 'spectacle'
 cask 'spillo'
 cask 'spotify'
 #cask 'transmission'
@@ -116,14 +116,21 @@ mas 'Bear', id: 1091189122
 mas 'GarageBand', id: 682658836
 mas 'iMovie', id: 408981434
 mas 'Keynote', id: 409183694
+#mas 'Magnet', id: 441258766
 #mas 'Mousepose', id: 405904955
 mas 'Noizio', id: 928871589
 mas 'Numbers', id: 409203825
 mas 'Pages', id: 409201541
-#mas 'SonicWALL Mobile Connect', id: 822514576
+mas 'Pocket', id: 568494494
+#mas 'Rested', id: 421879749
 #mas 'SiteSucker', id: 442168834
 mas 'Slack', id: 803453959
+#mas 'SonicWall', id: 822514576
+#mas 'Table', id: 1122008420
 mas 'Telegram', id: 747648890
+mas 'Todoist', id: 585829637
+#mas 'Trello', id: 1278508951
 mas 'Tweetbot', id: 557168941
 mas 'Wunderlist', id: 410628904
+#mas 'Xcode', id: 497799835
 
