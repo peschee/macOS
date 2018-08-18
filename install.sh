@@ -7,6 +7,26 @@ task() {
     printf "\n${headline} %s ${reset}\n" "$*"
 }
 
+installComposer() {
+    EXPECTED_SIGNATURE="$(wget -q -O - https://composer.github.io/installer.sig)"
+    php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    ACTUAL_SIGNATURE="$(php -r "echo hash_file('SHA384', 'composer-setup.php');")"
+
+    if [ "$EXPECTED_SIGNATURE" != "$ACTUAL_SIGNATURE" ]
+    then
+        >&2 echo 'ERROR: Invalid installer signature'
+        rm composer-setup.php
+        exit 1
+    fi
+
+    php composer-setup.php --quiet
+    RESULT=$?
+    rm composer-setup.php
+}
+
+# Ask for the administrator password upfront
+sudo -v
+
 task 'Install oh-my-zsh'
 # @see https://github.com/robbyrussell/oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -46,7 +66,8 @@ sudo mkdir -pv /usr/local/n && sudo chown -R $(whoami) /usr/local/n
 # rbenv global 2.3.1
 # ruby -v
 
-# task 'Installing (web) development setup…'
+task 'Installing (web) development setup…'
+installComposer && mv -v composer.phar ~/bin/composer
 # ln -sfv $(pwd)/etc/dnsmasq.conf $(brew --prefix)/etc/
 # ln -sfv $(pwd)/etc/my.cnf $(brew --prefix)/etc/
 # sudo mkdir /etc/resolver
@@ -86,3 +107,7 @@ sudo mkdir -pv /usr/local/n && sudo chown -R $(whoami) /usr/local/n
 task 'Installing additional scripts…'
 # @see https://github.com/bntzio/wipe-modules
 curl -L https://raw.githubusercontent.com/bntzio/wipe-modules/master/wipe-modules.sh -o ~/bin/wipe-modules && chmod +x ~/bin/wipe-modules
+
+task 'Setting up configuration files…'
+# Set up my preferred keyboard shortcuts
+cp -rv config/spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json

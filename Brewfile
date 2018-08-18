@@ -44,7 +44,7 @@ brew 'mas'
 brew 'mkcert'
 brew 'mysql', service_restart: true
 brew 'nss'
-brew 'node'
+#brew 'node'
 #brew 'openssl'
 #brew 'pcre'
 #brew 'pkg-config'
@@ -58,7 +58,7 @@ brew 'z'
 #brew 'zlib'
 brew 'watchman'
 brew 'wget'
-brew 'yarn'
+brew 'yarn', args: ['without-node']
 brew 'youtube-dl'
 
 #brew 'homebrew/php/composer'
