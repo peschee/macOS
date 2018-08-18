@@ -76,6 +76,7 @@ cask 'betterzip'
 cask 'cleanmymac'
 cask 'colorpicker-skalacolor'
 cask 'dash'
+cask 'daisydisk'
 cask 'default-folder-x'
 cask 'dropbox'
 cask 'dropshare'
@@ -110,6 +111,16 @@ cask 'font-inconsolata'
 cask 'font-fira-mono-for-powerline'
 cask 'font-menlo-for-powerline'
 cask 'font-meslo-for-powerline'
+
+# Quick Look plugins
+# @see https://github.com/sindresorhus/quick-look-plugins
+cask 'qlcolorcode'
+cask 'qlstephen'
+cask 'qlmarkdown'
+cask 'quicklook-json'
+cask 'qlimagesize'
+cask 'webpquicklook'
+cask 'qlvideo'
 
 # App Store Applications
 mas 'Affinity', id: 824183456
