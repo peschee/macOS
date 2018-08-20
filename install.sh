@@ -30,6 +30,12 @@ sudo -v
 task 'Install oh-my-zsh'
 # @see https://github.com/robbyrussell/oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# @see https://github.com/zsh-users/zsh-autosuggestions
+[ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ] && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# @see https://github.com/zsh-users/zsh-syntax-highlighting
+[ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# @see https://github.com/bhilburn/powerlevel9k
+[ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel9k ] && git clone https://github.com/bhilburn/powerlevel9k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel9k
 
 task 'Linking dotfiles…'
 ln -sfv $(pwd)/dotfiles/.zshrc $(pwd)/dotfiles/.zprofile ~
@@ -55,7 +61,8 @@ brew bundle
 task 'Installing npm dependencies…'
 echo "node: $(node -v)"
 echo "npm: $(npm -v)"
-npm install -g n avn avn-n
+curl -L https://git.io/n-install | bash
+npm install -g avn avn-n
 avn setup
 sudo mkdir -pv /usr/local/n && sudo chown -R $(whoami) /usr/local/n
 
