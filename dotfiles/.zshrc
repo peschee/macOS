@@ -68,6 +68,7 @@ plugins=(
     git-extras
     last-working-dir
     symfony2
+    yarn
     z
     zsh-completions
 )

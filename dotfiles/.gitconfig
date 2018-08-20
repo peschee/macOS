@@ -84,3 +84,6 @@
 
 	name = Peter Siska
 	email = psiska@inventage.com
+	
+[url "https://extgit.vpbank.com/scm"]
+	insteadOf = ssh://extgit.vpbank.net
