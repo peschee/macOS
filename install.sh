@@ -7,6 +7,10 @@ task() {
     printf "\n${headline} %s ${reset}\n" "$*"
 }
 
+commandExists () {
+    type "$1" &> /dev/null ;
+}
+
 installComposer() {
     EXPECTED_SIGNATURE="$(wget -q -O - https://composer.github.io/installer.sig)"
     php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -59,10 +63,19 @@ task 'Installing Homebrew bundle…'
 brew bundle
 
 task 'Installing n + avn…'
-curl -L https://git.io/n-install | bash -s -- -n -y lts latest
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
-npm install -g avn avn-n
-avn setup
+if [[ -d ~/n ]];then
+    echo 'n seems already installed, skipping…'
+else
+    curl -L https://git.io/n-install | bash -s -- -n -y lts latest
+    export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
+fi
+
+if commandExists avn; then
+    echo ' seems already installed, skipping…'
+else
+    npm install -g avn avn-n
+    avn setup
+fi
 
 task 'Installing (web) development setup…'
 installComposer && mv -v composer.phar ~/bin/composer
