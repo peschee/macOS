@@ -90,7 +90,7 @@ setopt nonomatch
 
 # Init rbenv
 # @see https://github.com/rbenv/rbenv
-#eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 
 # avn
 # @see https://github.com/wbyoung/avn

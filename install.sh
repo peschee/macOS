@@ -58,18 +58,11 @@ fi
 task 'Installing Homebrew bundle…'
 brew bundle
 
-task 'Installing npm dependencies…'
+task 'Installing n + avn…'
 curl -L https://git.io/n-install | bash -s -- -n -y lts latest
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
 npm install -g avn avn-n
 avn setup
-
-# task 'Installing rbenv…'
-# git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-# git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-# rbenv install 2.3.1
-# rbenv global 2.3.1
-# ruby -v
 
 task 'Installing (web) development setup…'
 installComposer && mv -v composer.phar ~/bin/composer
