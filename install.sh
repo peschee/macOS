@@ -59,12 +59,10 @@ task 'Installing Homebrew bundle…'
 brew bundle
 
 task 'Installing npm dependencies…'
-echo "node: $(node -v)"
-echo "npm: $(npm -v)"
-curl -L https://git.io/n-install | bash
+curl -L https://git.io/n-install | bash -s -- -n -y lts latest
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
 npm install -g avn avn-n
 avn setup
-sudo mkdir -pv /usr/local/n && sudo chown -R $(whoami) /usr/local/n
 
 # task 'Installing rbenv…'
 # git clone https://github.com/rbenv/rbenv.git ~/.rbenv

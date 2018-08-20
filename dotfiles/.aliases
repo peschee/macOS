@@ -142,7 +142,8 @@ alias mailhog-stop='docker rm -f mailhog'
 alias update='cd ~; \
     sudo softwareupdate -i -a; \
     bu; \
+    n-update; \
     npm update -g; \
     gem update --system; gem update; \
     c self-update; \
-    c global update -o;' 
+    c global update -o;'

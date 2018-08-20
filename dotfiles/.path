@@ -10,7 +10,4 @@ PATH="$HOME/bin:$PATH"
 # Add gnu tar
 PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 
-# Add yarn
-PATH="$HOME/.yarn/bin:$PATH"
-
 export PATH
