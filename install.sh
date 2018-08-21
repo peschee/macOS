@@ -119,6 +119,8 @@ task 'Installing additional scripts…'
 # @see https://github.com/bntzio/wipe-modules
 curl -L https://raw.githubusercontent.com/bntzio/wipe-modules/master/wipe-modules.sh -o ~/bin/wipe-modules && chmod +x ~/bin/wipe-modules
 
-task 'Setting up configuration files…'
+task 'Linking configuration files…'
 # Set up my preferred keyboard shortcuts
-cp -rv config/spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json
+ln -sfv config/spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json
+# Visual Code settings
+ln -sfv config/code.json ~/Library/Application\ Support/Code/User/settings.json

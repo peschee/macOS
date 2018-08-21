@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "Brewfile": "shellscript"
+    },
+    "git.autofetch": true,
+    "git.enableSmartCommit": true
+}
