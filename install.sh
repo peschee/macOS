@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
-reset="\033[0m"
-headline="\033[45m\033[1;37m"
-pwd="$(pwd)"
+COLOR_RESET="\033[0m"
+COLOR_HEADLINE="\033[45m\033[1;37m"
+REPO_DIR=$(cd "$(dirname ${BASH_SOURCE[0]})" && pwd)
+
+echo $REPO_DIR
+
+# Change to script directory so we can use relative paths
+cd "$(dirname "${BASH_SOURCE}")"
 
 task() {
-    printf "\n${headline} %s ${reset}\n" "$*"
+    printf "\n${COLOR_HEADLINE} %s ${COLOR_RESET}\n" "$*"
 }
 
 commandExists () {
@@ -42,13 +47,13 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel9k ] && git clone https://github.com/bhilburn/powerlevel9k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel9k
 
 task 'Linking dotfiles…'
-ln -sfv $(pwd)/dotfiles/.zshrc $(pwd)/dotfiles/.zprofile ~
-ln -sfv $(pwd)/dotfiles/.gitconfig $(pwd)/dotfiles/.gitignore ~
-for file in $(pwd)/dotfiles/.{path,exports,aliases,functions,extra}; do
+ln -sfv $REPO_DIR/dotfiles/.zshrc $REPO_DIR/dotfiles/.zprofile ~
+ln -sfv $REPO_DIR/dotfiles/.gitconfig $REPO_DIR/dotfiles/.gitignore ~
+for file in $REPO_DIR/dotfiles/.{path,exports,aliases,functions,extra}; do
     [ -r "$file" ] && [ -f "$file" ] && ln -sfv "$file" ~ && source "$file"
 done
 task 'Copying scripts to ~/bin…'
-mkdir -pv ~/bin && cp -Rfv $(pwd)/bin/* ~/bin
+mkdir -pv ~/bin && cp -Rfv bin/* ~/bin
 
 which -s brew
 if [[ $? != 0 ]] ; then
@@ -71,7 +76,7 @@ else
 fi
 
 if commandExists avn; then
-    echo ' seems already installed, skipping…'
+    echo 'avn seems already installed, skipping…'
 else
     npm install -g avn avn-n
     avn setup
@@ -79,15 +84,15 @@ fi
 
 task 'Installing (web) development setup…'
 installComposer && mv -v composer.phar ~/bin/composer
-# ln -sfv $(pwd)/etc/dnsmasq.conf $(brew --prefix)/etc/
-# ln -sfv $(pwd)/etc/my.cnf $(brew --prefix)/etc/
+# ln -sfv etc/dnsmasq.conf $(brew --prefix)/etc/
+# ln -sfv etc/my.cnf $(brew --prefix)/etc/
 # sudo mkdir /etc/resolver
-# sudo ln -sfv $(pwd)/etc/resolver/* /etc/resolver/
+# sudo ln -sfv etc/resolver/* /etc/resolver/
 # sudo launchctl unload /System/Library/LaunchDaemons/org.apache.httpd.plist 2>/dev/null
-# ln -sfv $(pwd)/etc/httpd.conf $(brew --prefix)/etc/httpd/
+# ln -sfv etc/httpd.conf $(brew --prefix)/etc/httpd/
 # mkdir -pv ~/Projects
 # mkdir -pv ~/Sites/{logs,ssl,vhosts}
-# ln -sfv $(pwd)/config/_default.conf ~/Sites/vhosts/
+# ln -sfv config/_default.conf ~/Sites/vhosts/
 
 # (export USERHOME=$(dscl . -read /Users/`whoami` NFSHomeDirectory | awk -F"\: " '{print $2}') ; cat > ~/Sites/ssl/ssl-shared-cert.inc <<EOF
 # SSLEngine On
@@ -107,7 +112,7 @@ installComposer && mv -v composer.phar ~/bin/composer
 #   -keyout ~/Sites/ssl/private.key \
 #   -out ~/Sites/ssl/selfsigned.crt
 
-# sudo cp $(pwd)/config/co.echo.httpdfwd.plist /Library/LaunchDaemons/
+# sudo cp config/co.echo.httpdfwd.plist /Library/LaunchDaemons/
 # sudo chown root:wheel /Library/LaunchDaemons/co.echo.httpdfwd.plist
 # sudo launchctl load -Fw /Library/LaunchDaemons/co.echo.httpdfwd.plist
 
@@ -121,6 +126,6 @@ curl -L https://raw.githubusercontent.com/bntzio/wipe-modules/master/wipe-module
 
 task 'Linking configuration files…'
 # Set up my preferred keyboard shortcuts
-ln -sfv config/spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json
+ln -sfv "${REPO_DIR}/config/spectacle.json" "${HOME}/Library/Application Support/Spectacle/Shortcuts.json"
 # Visual Code settings
-ln -sfv config/code.json ~/Library/Application\ Support/Code/User/settings.json
+ln -sfv "${REPO_DIR}/config/code.json" "${HOME}/Library/Application Support/Code/User/settings.json"
