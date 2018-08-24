@@ -109,7 +109,7 @@ sudo launchctl unload /System/Library/LaunchDaemons/org.apache.httpd.plist 2>/de
 
 # Setup httpd
 ln -sfv "${REPO_DIR}/etc/httpd.conf" $(brew --prefix)/etc/httpd
-mkdir -pv ~/Sites/{logs,ssl,vhosts,inc}
+mkdir -pv ~/Sites/{logs,ssl,vhosts,inc,auto}
 ln -sfv "${REPO_DIR}/config/_default.conf" ~/Sites/vhosts/
 ln -sfv "${REPO_DIR}/config/options-ssl-apache.conf" ~/Sites/inc/
 echo "<?php phpinfo();\n" > ~/Sites/index.php
