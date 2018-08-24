@@ -101,8 +101,8 @@ task 'Installing (web) development setup…'
 ln -sfv "${REPO_DIR}/etc/my.cnf" $(brew --prefix)/etc
 
 # Launch MySQL's secure installation script to set up root user
-#brew services start mysql@5.7
-#$(brew --prefix mysql@5.7)/bin/mysql_secure_installation
+brew services start mysql@5.7
+$(brew --prefix mysql@5.7)/bin/mysql_secure_installation
 
 # Disable built-in httpd
 sudo launchctl unload /System/Library/LaunchDaemons/org.apache.httpd.plist 2>/dev/null
