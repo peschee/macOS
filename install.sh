@@ -84,6 +84,8 @@ fi
 
 task 'Installing (web) development setup…'
 installComposer && mv -v composer.phar ~/bin/composer
+mkdir -p ~/bin/.composer && ln -sfv "${REPO_DIR}/config/composer.lock" "${HOME}/.composer/composer.lock"
+~/bin/composer global install
 # ln -sfv etc/dnsmasq.conf $(brew --prefix)/etc/
 # ln -sfv etc/my.cnf $(brew --prefix)/etc/
 # sudo mkdir /etc/resolver
