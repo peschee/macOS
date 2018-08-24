@@ -7,8 +7,6 @@ cask_args appdir: '/Applications'
 
 tap 'caskroom/cask'
 tap 'caskroom/fonts'
-#tap 'homebrew/apache'
-#tap 'homebrew/bundle'
 tap 'homebrew/core'
 tap 'homebrew/services'
 
