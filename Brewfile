@@ -17,14 +17,13 @@ tap 'homebrew/services'
 #brew 'apr-util'
 #brew 'apr'
 #brew 'autoconf'
-#brew 'dnsmasq', service_restart: true
 #brew 'freetype'
 #brew 'gettext'
 brew 'git'
 brew 'git-extras'
 brew 'gnu-tar'
 #brew 'go'
-brew 'httpd', args: ['with-mpm-event']
+brew 'httpd', restart_service: true
 brew 'httpie'
 #brew 'icu4c'
 #brew 'imagemagick'
@@ -42,6 +41,7 @@ brew 'mysql@5.7', restart_service: true, link: true, conflicts_with: ["mysql"]
 brew 'nss'
 #brew 'openssl'
 #brew 'pcre'
+brew 'php', restart_service: true
 #brew 'pkg-config'
 #brew 'readline'
 #brew 'ripgrep'
