@@ -24,7 +24,7 @@ brew 'git'
 brew 'git-extras'
 brew 'gnu-tar'
 #brew 'go'
-#brew 'httpd', args: ['with-mpm-event']
+brew 'httpd', args: ['with-mpm-event']
 brew 'httpie'
 #brew 'icu4c'
 #brew 'imagemagick'
@@ -38,9 +38,8 @@ brew 'jenv'
 brew 'maven'
 brew 'mas'
 brew 'mkcert'
-brew 'mysql', service_restart: true
+brew 'mysql@5.7', restart_service: true, link: true, conflicts_with: ["mysql"]
 brew 'nss'
-# brew 'node'
 #brew 'openssl'
 #brew 'pcre'
 #brew 'pkg-config'
