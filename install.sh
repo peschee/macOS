@@ -45,9 +45,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel9k ] && git clone https://github.com/bhilburn/powerlevel9k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel9k
 
 task 'Linking dotfiles…'
-ln -sfv $REPO_DIR/dotfiles/.zshrc $REPO_DIR/dotfiles/.zprofile ~
-ln -sfv $REPO_DIR/dotfiles/.gitconfig $REPO_DIR/dotfiles/.gitignore ~
-for file in $REPO_DIR/dotfiles/.{path,exports,aliases,functions,extra}; do
+ln -sfv ${REPO_DIR}/dotfiles/.zshrc ${REPO_DIR}/dotfiles/.zprofile ~
+ln -sfv ${REPO_DIR}/dotfiles/.gitconfig ${REPO_DIR}/dotfiles/.gitignore ~
+ln -sfv ${REPO_DIR}/dotfiles/.vimrc ~
+for file in ${REPO_DIR}/dotfiles/.{path,exports,aliases,functions,extra}; do
     [ -r "$file" ] && [ -f "$file" ] && ln -sfv "$file" ~ && source "$file"
 done
 task 'Copying scripts to ~/bin…'
