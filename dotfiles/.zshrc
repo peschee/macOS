@@ -92,14 +92,18 @@ setopt nonomatch
 # @see https://github.com/rbenv/rbenv
 eval "$(rbenv init -)"
 
-# avn
-# @see https://github.com/wbyoung/avn
-[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
-
 # jenv
 # @see http://www.jenv.be/
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+# n
+# @see https://github.com/mklement0/n-install
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || export PATH="$N_PREFIX/bin:$PATH"
+
+# avn
+# @see https://github.com/wbyoung/avn
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
 
 # iterm2 shell integration
 # @see https://www.iterm2.com/documentation-shell-integration.html
@@ -109,7 +113,3 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs)
 POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='000'
-
-# n
-# @see https://github.com/mklement0/n-install
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"

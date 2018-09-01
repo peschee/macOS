@@ -35,7 +35,8 @@ brew 'jenv'
 brew 'maven'
 brew 'mas'
 brew 'mkcert'
-brew 'mysql@5.7', restart_service: true, link: true, conflicts_with: ["mysql"]
+brew 'mysql@5.7', restart_service: true, link: true, conflicts_with: ['mysql']
+# brew 'node', args: ['--without-npm']
 brew 'nss'
 #brew 'openssl'
 #brew 'pcre'
@@ -53,6 +54,7 @@ brew 'z'
 brew 'watchman'
 brew 'wget'
 brew 'yarn', args: ['without-node']
+# brew 'yarn'
 brew 'youtube-dl'
 
 #cask '1password' # Because we don't want the newest >6.x version which is subscription based…

@@ -1,9 +1,6 @@
 # Add local bin directories
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
-# Add composer bin directory
-PATH="$PATH:$HOME/.composer/vendor/bin"
-
 # Add `~/bin`
 PATH="$HOME/bin:$PATH"
 

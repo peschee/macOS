@@ -71,7 +71,7 @@ if [[ -d ~/n ]];then
     echo 'n seems already installed, skipping…'
 else
     curl -L https://git.io/n-install | bash -s -- -n -y lts latest
-    export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
+    export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH = "$N_PREFIX/bin:$PATH"
 fi
 
 if commandExists avn; then
