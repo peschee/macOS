@@ -160,7 +160,7 @@ alias update='cd ~; \
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
-# Alias z --> j
+# Alias j --> z
 # @see https://github.com/rupa/z
 # @see https://github.com/wting/autojump
 alias j='z'
