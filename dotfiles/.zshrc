@@ -70,6 +70,7 @@ plugins=(
     last-working-dir
     ng
     symfony2
+    vagrant
     yarn
     z
     zsh-completions

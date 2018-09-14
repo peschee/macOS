@@ -57,6 +57,7 @@ brew 'wget'
 brew 'yarn', args: ['without-node']
 # brew 'yarn'
 brew 'youtube-dl'
+brew 'vagrant'
 
 #cask '1password' # Because we don't want the newest >6.x version which is subscription based…
 cask 'alfred'

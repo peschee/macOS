@@ -47,7 +47,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 task 'Linking dotfiles…'
 ln -sfv ${REPO_DIR}/dotfiles/.zshrc ${REPO_DIR}/dotfiles/.zprofile ~
 ln -sfv ${REPO_DIR}/dotfiles/.gitconfig ${REPO_DIR}/dotfiles/.gitignore ~
-ln -sfv ${REPO_DIR}/dotfiles/.vimrc ~
+ln -sfv ${REPO_DIR}/dotfiles/.{vimrc,gemrc} ~
 for file in ${REPO_DIR}/dotfiles/.{path,exports,aliases,functions,extra}; do
     [ -r "$file" ] && [ -f "$file" ] && ln -sfv "$file" ~ && source "$file"
 done
@@ -113,6 +113,7 @@ ln -sfv "${REPO_DIR}/etc/httpd.conf" $(brew --prefix)/etc/httpd
 mkdir -pv ~/Sites/{logs,ssl,vhosts,inc,auto}
 ln -sfv "${REPO_DIR}/config/_default.conf" ~/Sites/vhosts/
 ln -sfv "${REPO_DIR}/config/options-ssl-apache.conf" ~/Sites/inc/
+echo "<?php phpinfo();\n" > ~/Sites/index.php
 echo "<?php phpinfo();\n" > ~/Sites/index.php
 
 # Setup self-signed SSL
