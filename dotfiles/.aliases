@@ -10,9 +10,9 @@ alias -- -="cd -"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
+    colorflag="--color"
 else # OS X `ls`
-	colorflag="-G"
+    colorflag="-G"
 fi
 
 # List all files colorized in long format
@@ -110,7 +110,7 @@ alias map="xargs -n1"
 
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	alias "$method"="lwp-request -m '$method'"
+    alias "$method"="lwp-request -m '$method'"
 done
 
 # Make Grunt print stack traces by default
@@ -147,15 +147,15 @@ alias mailhog-start='docker run -d -p 1025:1025 -p 8025:8025 --name mailhog mail
 alias mailhog-stop='docker rm -f mailhog'
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='cd ~; \
-    sudo softwareupdate -i -a; \
-    bu; \
-    mas upgrade; \
-    n-update; \
-    npm update -g; \
-    gem update --system; gem update; \
-    c self-update; \
-    c global update -o;'
+alias update='cd ~;
+    sudo softwareupdate -i -a;
+    bu;
+    mas upgrade;
+    n-update -y;
+    npm update -g;
+    gem update --system; gem update;
+    c self-update;
+    c global update -o'
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
@@ -164,3 +164,7 @@ alias path='echo -e ${PATH//:/\\n}'
 # @see https://github.com/rupa/z
 # @see https://github.com/wting/autojump
 alias j='z'
+
+# Mailhog
+alias mailhog-start='docker run -d -p 1025:1025 -p 8025:8025 --name mailhog mailhog/mailhog'
+alias mailhog-stop='docker rm -f mailhog'
