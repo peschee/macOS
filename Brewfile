@@ -109,7 +109,6 @@ cask 'qlstephen'
 cask 'qlmarkdown'
 cask 'quicklook-json'
 cask 'qlimagesize'
-cask 'webpquicklook'
 cask 'qlvideo'
 
 # App Store Applications
