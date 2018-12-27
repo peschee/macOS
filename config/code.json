@@ -8,5 +8,7 @@
     "editor.fontLigatures": true,
     "editor.fontSize": 13,
     "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 500
 }
