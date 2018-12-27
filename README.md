@@ -1,5 +1,7 @@
 # macOS
 
+<p style="text-align: center;"><img src="./resources/macOS.png" width="128" height="128 /></p>
+
 This is a collection of configuration files to setup a new macbook. A big source of inspiration was 
 https://github.com/mathiasbynens/dotfiles as well as https://github.com/mzdr/macOS.
 
