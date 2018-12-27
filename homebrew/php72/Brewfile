@@ -1,8 +1,0 @@
-brew 'homebrew/php/php72'
-brew 'homebrew/php/php72-apcu'
-brew 'homebrew/php/php72-apcu-bc'
-brew 'homebrew/php/php72-imagick', args: ['build-from-source']
-brew 'homebrew/php/php72-intl'
-brew 'homebrew/php/php72-opcache'
-#https://github.com/Homebrew/homebrew-php/pull/4439
-#brew 'homebrew/php/php72-xdebug'

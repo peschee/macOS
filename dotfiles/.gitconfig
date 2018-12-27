@@ -83,8 +83,7 @@
 [user]
 
 	name = Peter Siska
-	email = pesche@gridonic.ch
-
-[git-up "bundler"]
-	check = true
-	autoinstall = true
+	email = psiska@inventage.com
+	
+[url "https://extgit.vpbank.com/scm"]
+	insteadOf = ssh://extgit.vpbank.net

@@ -3,6 +3,6 @@
 # * ~/.extra can be used for other settings you don’t want to commit.
 # for file in ~/.{path,exports,aliases,functions,extra}; do
 for file in ~/.{path,exports,aliases,functions,extra}; do
-    [ -r "$file" ] && source "$file"
+    [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file

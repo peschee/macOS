@@ -1,5 +1,5 @@
 # Make vim the default editor
-export EDITOR="atom";
+export EDITOR="code";
 export GIT_EDITOR="vim";
 
 # Larger bash history (allow 32³ entries; default is 500)
@@ -24,3 +24,7 @@ export GREP_OPTIONS="--color=auto";
 
 # JAVA HOME
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`;
+
+# Disable homebrew analytics
+# @see https://docs.brew.sh/Analytics.html
+export HOMEBREW_NO_ANALYTICS=1

@@ -1,4 +1,7 @@
-# Easier navigation: .., ..., ...., ....., ~ and -
+# Custom aliases
+# Some of them are taken from https://github.com/mathiasbynens/dotfiles
+
+# Easier navigation: .., ..., ...., ..... and -
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -7,29 +10,25 @@ alias -- -="cd -"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
+    colorflag="--color"
 else # OS X `ls`
-	colorflag="-G"
-fi
-
-# Re-initialize shell
-if [ -n "$ZSH_VERSION" ]; then
-    alias resource="source $HOME/.zshrc; source $HOME/.zprofile";
-else
-    alias resource="source $HOME/.bashrc";
+    colorflag="-G"
 fi
 
 # List all files colorized in long format
 alias l="ls -AlFh ${colorflag}"
-
-# List all files colorized in long format, including dot files
-alias la="ls -laF ${colorflag}"
 
 # List only directories
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
+
+# Always enable colored `grep` output
+# Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
@@ -45,6 +44,9 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
+# Show active network interfaces
+alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
+
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
@@ -54,6 +56,9 @@ alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/La
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+
+# Canonical hex dump; some systems have this symlinked
+command -v hd > /dev/null || alias hd="hexdump -C"
 
 # OS X has no `md5sum`, so use `md5` as a fallback
 command -v md5sum > /dev/null || alias md5sum="md5"
@@ -67,7 +72,7 @@ jscbin="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources
 unset jscbin;
 
 # Trim new lines and copy to clipboard
-alias cb=e"tr -d '\n' | pbcopy"
+alias cb="tr -d '\n' | pbcopy"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
@@ -76,26 +81,27 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 # Also, clear Apple’s System Logs to improve shell startup speed
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
+# Show/hide hidden files in Finder
+alias showhidden="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hidehidden="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+# URL-encode strings
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
 # Merge PDF files
 # Usage: `mergepdf -o output.pdf input{1,2,3}.pdf`
 alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
 
-# Disable Spotlight
+# Disable / enable Spotlight
 alias spotoff="sudo mdutil -a -i off"
-
-# Enable Spotlight
 alias spoton="sudo mdutil -a -i on"
 
 # PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
 alias plistbuddy="/usr/libexec/PlistBuddy"
-
-# Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
-# (useful when executing time-consuming commands)
-alias badge="tput bel"
 
 # Intuitive map function
 # For example, to list all directories that contain a certain file:
@@ -104,14 +110,11 @@ alias map="xargs -n1"
 
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	alias "$method"="lwp-request -m '$method'"
+    alias "$method"="lwp-request -m '$method'"
 done
 
 # Make Grunt print stack traces by default
 command -v grunt > /dev/null && alias grunt="grunt --stack"
-
-# Lock the screen (when going AFK)
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
@@ -120,25 +123,12 @@ alias reload="exec $SHELL -l"
 command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.eu/"
 
 # Homebrew
-alias bu='brew up; brew upgrade; brew cleanup --purge'
+alias bu='brew update; brew upgrade; brew cask upgrade; brew cleanup --prune=0 -s; rm -rf $(brew --cache)'
 
 # Git stats
 alias git-stats='git shortlog -s -n'
 
-# Vendor everything
-# http://ryan.mcgeary.org/2011/02/09/vendor-everything-still-applies/
-alias b="bundle"
-alias bui="b install --path vendor"
-alias buil="bi --local"
-alias buu="b update"
-alias bue="b exec"
-alias buinit="bi && b package && echo 'vendor/ruby' >> .gitignore"
-
-# https://twitter.com/addyosmani/status/715552965461983233
-alias weather='function _weather(){ curl -4 wttr.in/$1; };_weather'
-alias moon="curl -4 wttr.in/Moon"
-
-# https://jenssegers.com/83/list-outdated-composer-packages
+# @see https://jenssegers.com/83/list-outdated-composer-packages
 alias climb='composer outdated --outdated --direct'
 
 # ZNC uberspace
@@ -149,23 +139,32 @@ alias docker-remove-dangling='docker rmi $(docker images -f "dangling=true" -q)'
 alias docker-remove-containers='docker rm $(docker ps -a -q)'
 alias docker-remove-images='docker rmi $(docker images -q)'
 
-# https://soledadpenades.com/2015/05/31/npmoffline-installing-npm-packages-from-the-cache/
+# @see https://soledadpenades.com/2015/05/31/npmoffline-installing-npm-packages-from-the-cache/
 alias npmoffline='npm --cache-min 9999999'
-alias yarnp='yarn --pure-lockfile'
 
 # Mailhog
 alias mailhog-start='docker run -d -p 1025:1025 -p 8025:8025 --name mailhog mailhog/mailhog'
 alias mailhog-stop='docker rm -f mailhog'
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='cd ~; \
-    sudo softwareupdate -i -a; \
-    brew update; brew upgrade; brew cu; \
-    brew cleanup --prune=0 -s; rm -rf $(brew --cache) \
-    npm update -g; \
-    gem update --system; gem update; \
-    apm update -c false; \
-    c self-update; \
-    c global update -o; \
-    go get -u all; \
-    j --purge'
+alias update='cd ~;
+    sudo softwareupdate -i -a;
+    bu;
+    mas upgrade;
+    n-update -y;
+    npm update -g;
+    gem update --system; gem update;
+    c self-update;
+    c global update -o'
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+
+# Alias j --> z
+# @see https://github.com/rupa/z
+# @see https://github.com/wting/autojump
+alias j='z'
+
+# Mailhog
+alias mailhog-start='docker run -d -p 1025:1025 -p 8025:8025 --name mailhog mailhog/mailhog'
+alias mailhog-stop='docker rm -f mailhog'
