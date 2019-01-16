@@ -138,5 +138,8 @@ curl -L https://raw.githubusercontent.com/bntzio/wipe-modules/master/wipe-module
 task 'Linking configuration files…'
 # Set up my preferred keyboard shortcuts
 ln -sfv "${REPO_DIR}/config/spectacle.json" "${HOME}/Library/Application Support/Spectacle/Shortcuts.json"
+
 # Visual Code settings
-ln -sfv "${REPO_DIR}/config/code.json" "${HOME}/Library/Application Support/Code/User/settings.json"
+ln -sfv "${REPO_DIR}/config/VSCode/settings.json" "${HOME}/Library/Application Support/Code/User/"
+ln -sfv "${REPO_DIR}/config/VSCode/keybindings.json" "${HOME}/Library/Application Support/Code/User/"
+ln -sfv "${REPO_DIR}/config/VSCode/snippets" "${HOME}/Library/Application Support/Code/User/"
