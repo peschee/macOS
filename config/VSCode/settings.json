@@ -1,3 +1,5 @@
 {
-    "telemetry.enableTelemetry": false
+    "telemetry.enableTelemetry": false,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 500
 }
