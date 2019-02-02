@@ -168,3 +168,7 @@ alias j='z'
 # Mailhog
 alias mailhog-start='docker run -d -p 1025:1025 -p 8025:8025 --name mailhog mailhog/mailhog'
 alias mailhog-stop='docker rm -f mailhog'
+
+# Git log format for gr
+# @see http://mixu.net/gr/#features
+alias grlog='git --no-pager log --pretty=format:"%h%x09%an%x09%ad%x09%s" --date=short --author=psiska'
