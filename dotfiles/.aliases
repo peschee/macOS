@@ -172,3 +172,11 @@ alias mailhog-stop='docker rm -f mailhog'
 # Git log format for gr
 # @see http://mixu.net/gr/#features
 alias grlog='git --no-pager log --pretty=format:"%h%x09%an%x09%ad%x09%s" --date=short --author=psiska'
+alias grlog-vpb='gr @vpb @inventage git --no-pager log --pretty=format:"%h%x09%an%x09%ad%x09%s" --date=short --author=psiska --since=14.days'
+
+# Prefer system python over Homebrew installed python when running swift REPL
+# @see https://forums.swift.org/t/swift-repl-starts-with-error-when-homebrew-python-is-installed/12927/3
+alias swift='PATH="/usr/bin:$PATH" swift'
+
+# Start a HTTP server using Node + https://github.com/indexzero/http-server
+alias server='npx http-server -p 8001 -i false'
