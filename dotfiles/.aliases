@@ -180,3 +180,8 @@ alias swift='PATH="/usr/bin:$PATH" swift'
 
 # Start a HTTP server using Node + https://github.com/indexzero/http-server
 alias server='npx http-server -p 8001 -i false'
+
+# @see https://gist.github.com/jasonvarga/321575cf83c3ecef021cfab6f41cffb6
+alias art='artisan'
+# If you use oh-my-zsh, please is aliased to sudo.
+alias please='please'
