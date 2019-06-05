@@ -9,6 +9,9 @@ tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'homebrew/core'
 tap 'homebrew/services'
+# Non-Free Fonts
+# @see https://github.com/colindean/homebrew-fonts-nonfree
+tap 'colindean/fonts-nonfree'
 
 #brew 'ack'
 #brew 'ant'
@@ -62,7 +65,6 @@ brew 'vagrant'
 #cask '1password' # Because we don't want the newest >6.x version which is subscription based…
 cask 'alfred'
 cask 'betterzip'
-cask 'cleanmymac'
 cask 'colorpicker-skalacolor'
 cask 'dash'
 cask 'daisydisk'
@@ -89,8 +91,7 @@ cask 'spillo'
 cask 'spotify'
 cask 'transmission'
 cask 'timer'
-cask 'typinator'
-cask 'virtualbox'
+#cask 'virtualbox'
 cask 'vlc'
 #cask 'wkhtmltopdf'
 cask 'visual-studio-code'
@@ -101,6 +102,7 @@ cask 'font-inconsolata'
 cask 'font-fira-mono-for-powerline'
 cask 'font-menlo-for-powerline'
 cask 'font-meslo-for-powerline'
+cask 'font-microsoft-office'
 
 # Quick Look plugins
 # @see https://github.com/sindresorhus/quick-look-plugins
@@ -126,12 +128,12 @@ mas 'Pages', id: 409201541
 mas 'Pocket', id: 568494494
 #mas 'Rested', id: 421879749
 #mas 'SiteSucker', id: 442168834
-mas 'Slack', id: 803453959
+#mas 'Slack', id: 803453959
 #mas 'SonicWall', id: 822514576
 #mas 'Table', id: 1122008420
 mas 'Telegram', id: 747648890
-mas 'Todoist', id: 585829637
+#mas 'Todoist', id: 585829637
 #mas 'Trello', id: 1278508951
-mas 'Tweetbot', id: 557168941
-mas 'Wunderlist', id: 410628904
+#mas 'Tweetbot', id: 557168941
+#mas 'Wunderlist', id: 410628904
 mas 'Xcode', id: 497799835
