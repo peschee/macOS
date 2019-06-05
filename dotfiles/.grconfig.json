@@ -1,6 +1,22 @@
 {
   "tags": {
-    "vpb": [],
+    "vpb": [
+      "/Users/psiska/Projects/vpbank/cms",
+      "/Users/psiska/Projects/vpbank/collab",
+      "/Users/psiska/Projects/vpbank/contract-management",
+      "/Users/psiska/Projects/vpbank/docker_chromium",
+      "/Users/psiska/Projects/vpbank/docker_puppeteer0",
+      "/Users/psiska/Projects/vpbank/iam",
+      "/Users/psiska/Projects/vpbank/kernel-portal",
+      "/Users/psiska/Projects/vpbank/maintenance-pages",
+      "/Users/psiska/Projects/vpbank/ngx-common",
+      "/Users/psiska/Projects/vpbank/openapi",
+      "/Users/psiska/Projects/vpbank/portal",
+      "/Users/psiska/Projects/vpbank/portal-office",
+      "/Users/psiska/Projects/vpbank/portal-styleguide",
+      "/Users/psiska/Projects/vpbank/search-app",
+      "/Users/psiska/Projects/vpbank/styleguide"
+    ],
     "inventage": [
       "/Users/psiska/Projects/inventage/dbi/chromium",
       "/Users/psiska/Projects/inventage/dbi/puppeteer0",
