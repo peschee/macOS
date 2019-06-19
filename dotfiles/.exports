@@ -28,3 +28,8 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`;
 # Disable homebrew analytics
 # @see https://docs.brew.sh/Analytics.html
 export HOMEBREW_NO_ANALYTICS=1
+
+# Enabled fingerprint auth when using SSH
+# @see https://medium.com/@prbinu/touch2sudo-enable-remote-sudo-two-factor-authentication-using-mac-touch-id-df638b7da594
+# @see https://github.com/prbinu/touch2sudo
+export SSH_ASKPASS=/usr/local/bin/touch2sudo
