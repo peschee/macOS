@@ -114,3 +114,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs)
 POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='000'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/psiska/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/psiska/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/psiska/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/psiska/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
