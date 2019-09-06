@@ -115,7 +115,7 @@ cask 'qlvideo'
 
 # App Store Applications
 mas 'Affinity', id: 824183456
-mas 'Bear', id: 1091189122
+#mas 'Bear', id: 1091189122
 #mas 'DiveLogManager', id: 404897036
 mas 'GarageBand', id: 682658836
 mas 'iMovie', id: 408981434
@@ -127,13 +127,14 @@ mas 'Numbers', id: 409203825
 mas 'Pages', id: 409201541
 mas 'Pocket', id: 568494494
 #mas 'Rested', id: 421879749
-#mas 'SiteSucker', id: 442168834
-#mas 'Slack', id: 803453959
+mas 'SiteSucker', id: 442168834
+mas 'Slack', id: 803453959
 #mas 'SonicWall', id: 822514576
 #mas 'Table', id: 1122008420
 mas 'Telegram', id: 747648890
 #mas 'Todoist', id: 585829637
-#mas 'Trello', id: 1278508951
-#mas 'Tweetbot', id: 557168941
+mas 'Trello', id: 1278508951
+mas 'Tweetbot', id: 557168941
 #mas 'Wunderlist', id: 410628904
 mas 'Xcode', id: 497799835
+mas 'ColorSlurp', id: 1287239339
