@@ -116,7 +116,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs)
 POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='000'
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/psiska/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/psiska/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/psiska/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/psiska/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
