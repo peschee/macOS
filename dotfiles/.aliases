@@ -185,3 +185,6 @@ alias server='npx http-server -p 8001 -i false'
 alias art='artisan'
 # If you use oh-my-zsh, please is aliased to sudo.
 alias please='please'
+
+# List all TCP ports we're listening on
+alias ports='sudo lsof -iTCP -sTCP:LISTEN -n -P'
