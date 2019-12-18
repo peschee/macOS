@@ -1,5 +1,9 @@
 {
     "telemetry.enableTelemetry": false,
     "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 500
+    "files.autoSaveDelay": 500,
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "npm.enableScriptExplorer": true
 }

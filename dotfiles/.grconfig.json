@@ -12,12 +12,16 @@
       "/Users/psiska/Projects/vpbank/ngx-common",
       "/Users/psiska/Projects/vpbank/openapi",
       "/Users/psiska/Projects/vpbank/portal",
-      "/Users/psiska/Projects/vpbank/portal-office",
       "/Users/psiska/Projects/vpbank/portal-styleguide",
       "/Users/psiska/Projects/vpbank/search-app",
       "/Users/psiska/Projects/vpbank/styleguide",
       "/Users/psiska/Projects/vpbank/design",
-      "/Users/psiska/Projects/vpbank/ebanking-design"
+      "/Users/psiska/Projects/vpbank/ebanking-design",
+      "/Users/psiska/Projects/vpbank/ebanking-web",
+      "/Users/psiska/Projects/vpbank/docker_gauge-taiko",
+      "/Users/psiska/Projects/vpbank/ebanking-core",
+      "/Users/psiska/Projects/vpbank/employee-portal",
+      "/Users/psiska/Projects/vpbank/letter-generator"
     ],
     "inventage": [
       "/Users/psiska/Projects/inventage/dbi/chromium",
@@ -28,7 +32,25 @@
       "/Users/psiska/Projects/inventage/idea-live-templates",
       "/Users/psiska/Projects/inventage/invweb",
       "/Users/psiska/Projects/inventage/regelwerk-gridsome",
-      "/Users/psiska/Projects/inventage/regelwerk-nuxt"
+      "/Users/psiska/Projects/inventage/regelwerk-nuxt",
+      "/Users/psiska/Projects/inventage/vuerp",
+      "/Users/psiska/Projects/inventage/ama",
+      "/Users/psiska/Projects/inventage/iERP",
+      "/Users/psiska/Projects/inventage/invweb-design",
+      "/Users/psiska/Projects/inventage/com.inventage.idb",
+      "/Users/psiska/Projects/inventage/invweb-3",
+      "/Users/psiska/Projects/inventage/xmas-2019",
+      "/Users/psiska/Projects/inventage/inventage-styleguide"
+    ],
+    "rivero": [
+      "/Users/psiska/Projects/rivero/sc-client",
+      "/Users/psiska/Projects/rivero/sc-google-cloud",
+      "/Users/psiska/Projects/rivero/sc-iam",
+      "/Users/psiska/Projects/rivero/sc-playground",
+      "/Users/psiska/Projects/rivero/sc-ruleextractor",
+      "/Users/psiska/Projects/rivero/sc-scheme",
+      "/Users/psiska/Projects/rivero/sc-tenant",
+      "/Users/psiska/Projects/rivero/styleguide"
     ]
   }
 }
