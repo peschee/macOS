@@ -5,5 +5,6 @@
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
-    "npm.enableScriptExplorer": true
+    "npm.enableScriptExplorer": true,
+    "git.enableSmartCommit": true
 }

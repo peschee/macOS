@@ -114,7 +114,6 @@ mkdir -pv ~/Sites/{logs,ssl,vhosts,inc,auto}
 ln -sfv "${REPO_DIR}/config/_default.conf" ~/Sites/vhosts/
 ln -sfv "${REPO_DIR}/config/options-ssl-apache.conf" ~/Sites/inc/
 echo "<?php phpinfo();\n" > ~/Sites/index.php
-echo "<?php phpinfo();\n" > ~/Sites/index.php
 
 # Setup self-signed SSL
 mkcert -install
