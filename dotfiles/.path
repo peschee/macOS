@@ -10,4 +10,7 @@ PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 # Add yarn
 PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
+# Add cargo (rust)
+PATH="$HOME/.cargo/bin:$PATH"
+
 export PATH
