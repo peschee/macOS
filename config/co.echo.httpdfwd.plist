@@ -8,7 +8,7 @@
 	<array>
 		<string>sh</string>
 		<string>-c</string>
-		<string>echo "rdr pass proto tcp from any to any port {80,9080} -> 127.0.0.1 port 9080" | pfctl -a "com.apple/260.HttpFwdFirewall" -Ef - &amp;&amp; echo "rdr pass proto tcp from any to any port {443,9443} -> 127.0.0.1 port 9443" | pfctl -a "com.apple/261.HttpFwdFirewall" -Ef - &amp;&amp; sysctl -w net.inet.ip.forwarding=1</string>
+		<string>echo "rdr pass proto tcp from any to any port 80 -> 127.0.0.1 port 9080" | pfctl -a "com.apple/260.HttpFwdFirewall" -Ef - &amp;&amp; echo "rdr pass proto tcp from any to any port 443 -> 127.0.0.1 port 9443" | pfctl -a "com.apple/261.HttpFwdFirewall" -Ef - &amp;&amp; sysctl -w net.inet.ip.forwarding=1</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>
