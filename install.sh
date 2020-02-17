@@ -47,6 +47,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 task 'Linking dotfiles…'
 ln -sfv ${REPO_DIR}/dotfiles/.zshrc ${REPO_DIR}/dotfiles/.zprofile ~
 ln -sfv ${REPO_DIR}/dotfiles/.gitconfig ${REPO_DIR}/dotfiles/.gitignore ~
+ln -sfv ${REPO_DIR}/dotfiles/.p10k.zsh ~
 ln -sfv ${REPO_DIR}/dotfiles/.{vimrc,gemrc,grconfig.json} ~
 for file in ${REPO_DIR}/dotfiles/.{path,exports,aliases,functions,extra}; do
     [ -r "$file" ] && [ -f "$file" ] && ln -sfv "$file" ~ && source "$file"
