@@ -197,16 +197,16 @@
         },
         {
             "name": "hirak/prestissimo",
-            "version": "0.3.9",
+            "version": "0.3.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hirak/prestissimo.git",
-                "reference": "01bed92c45e84d01a96f5d15c6e49958cbd57f36"
+                "reference": "fb6724d5ee81c96bebd2255175d8c364ac9301e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hirak/prestissimo/zipball/01bed92c45e84d01a96f5d15c6e49958cbd57f36",
-                "reference": "01bed92c45e84d01a96f5d15c6e49958cbd57f36",
+                "url": "https://api.github.com/repos/hirak/prestissimo/zipball/fb6724d5ee81c96bebd2255175d8c364ac9301e3",
+                "reference": "fb6724d5ee81c96bebd2255175d8c364ac9301e3",
                 "shasum": ""
             },
             "require": {
@@ -244,7 +244,7 @@
                 "parallel",
                 "speedup"
             ],
-            "time": "2019-05-04T08:16:12+00:00"
+            "time": "2020-02-16T12:49:55+00:00"
         },
         {
             "name": "psr/container",
@@ -435,16 +435,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v5.0.4",
+            "version": "v5.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "91c294166c38d8c0858a86fad76d8c14dc1144c8"
+                "reference": "d29e2d36941de13600c399e393a60b8cfe59ac49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/91c294166c38d8c0858a86fad76d8c14dc1144c8",
-                "reference": "91c294166c38d8c0858a86fad76d8c14dc1144c8",
+                "url": "https://api.github.com/repos/symfony/console/zipball/d29e2d36941de13600c399e393a60b8cfe59ac49",
+                "reference": "d29e2d36941de13600c399e393a60b8cfe59ac49",
                 "shasum": ""
             },
             "require": {
@@ -507,7 +507,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2020-01-25T15:56:29+00:00"
+            "time": "2020-02-24T15:05:31+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -628,16 +628,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v5.0.4",
+            "version": "v5.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "f9ffd870f5ac01abec7b2b5e15f904ca9400ecd1"
+                "reference": "fd4a86dd7e36437f2fc080d8c42c7415d828a0a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/f9ffd870f5ac01abec7b2b5e15f904ca9400ecd1",
-                "reference": "f9ffd870f5ac01abec7b2b5e15f904ca9400ecd1",
+                "url": "https://api.github.com/repos/symfony/process/zipball/fd4a86dd7e36437f2fc080d8c42c7415d828a0a8",
+                "reference": "fd4a86dd7e36437f2fc080d8c42c7415d828a0a8",
                 "shasum": ""
             },
             "require": {
@@ -673,7 +673,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2020-01-09T09:53:06+00:00"
+            "time": "2020-02-08T17:00:58+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -784,5 +784,6 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
