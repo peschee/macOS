@@ -99,7 +99,7 @@ setopt nonomatch
 
 # Init rbenv
 # @see https://github.com/rbenv/rbenv
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 
 # jenv
 # @see http://www.jenv.be/

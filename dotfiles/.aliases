@@ -151,7 +151,6 @@ alias update='cd ~;
     sudo softwareupdate -i -a;
     bu;
     mas upgrade;
-    n-update -y;
     npm update -g;
     gem update --system; gem update;
     c self-update;

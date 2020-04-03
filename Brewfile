@@ -48,7 +48,7 @@ brew 'php', restart_service: true
 #brew 'pkg-config'
 #brew 'readline'
 #brew 'ripgrep'
-brew 'rbenv'
+#brew 'rbenv'
 brew 'tig'
 #brew 'unixodbc'
 brew 'unrar'
