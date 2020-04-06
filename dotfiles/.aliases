@@ -152,7 +152,7 @@ alias update='cd ~;
     bu;
     mas upgrade;
     npm update -g;
-    gem update --system; gem update;
+#    gem update --system; gem update;
     c self-update;
     c global update -o'
 
