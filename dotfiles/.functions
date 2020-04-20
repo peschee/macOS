@@ -155,7 +155,7 @@ function artisan {
 }
 
 function versions {
-    echo -n 'Node: ' && node --version
+    echo -n 'Node: ' && node --version | tr -d 'v'
     echo -n 'NPM: ' && npm --version
     echo -n 'PHP: ' && php -v | grep ^PHP | cut -d' ' -f2
     echo -n 'Python: ' && python --version 2>&1 | cut -d' ' -f2
