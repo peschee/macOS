@@ -153,3 +153,11 @@ function please {
 function artisan {
   please "$@";
 }
+
+function versions {
+    echo -n 'Node: ' && node --version
+    echo -n 'NPM: ' && npm --version
+    echo -n 'PHP: ' && php -v | grep ^PHP | cut -d' ' -f2
+    echo -n 'Python: ' && python --version 2>&1 | cut -d' ' -f2
+    echo -n 'Java: ' && java -version 2>&1 | grep ^java | cut -d' ' -f3 | tr -d '"'
+}
