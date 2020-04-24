@@ -136,8 +136,8 @@ task 'Installing additional scripts…'
 curl -L https://raw.githubusercontent.com/bntzio/wipe-modules/master/wipe-modules.sh -o ~/bin/wipe-modules && chmod +x ~/bin/wipe-modules
 
 task 'Linking configuration files…'
-# Set up my preferred keyboard shortcuts
-ln -sfv "${REPO_DIR}/config/spectacle.json" "${HOME}/Library/Application Support/Spectacle/Shortcuts.json"
+# Set up my Rectangle keyboard shortcuts
+ln -sfv "${REPO_DIR}/config/com.knollsoft.Rectangle.plist" "${HOME}/Library/Preferences/com.knollsoft.Rectangle.plist"
 
 # Visual Code settings
 ln -sfv "${REPO_DIR}/config/VSCode/settings.json" "${HOME}/Library/Application Support/Code/User/"
