@@ -143,3 +143,7 @@ ln -sfv "${REPO_DIR}/config/com.knollsoft.Rectangle.plist" "${HOME}/Library/Pref
 ln -sfv "${REPO_DIR}/config/VSCode/settings.json" "${HOME}/Library/Application Support/Code/User/"
 ln -sfv "${REPO_DIR}/config/VSCode/keybindings.json" "${HOME}/Library/Application Support/Code/User/"
 ln -sfv "${REPO_DIR}/config/VSCode/snippets" "${HOME}/Library/Application Support/Code/User/"
+
+# @see https://gist.github.com/RichardBronosky/31660eb4b0f0ba5e673b9bc3c9148a70
+task 'Enable TouchID for sudo…'
+curl -sL https://gist.githubusercontent.com/RichardBronosky/31660eb4b0f0ba5e673b9bc3c9148a70/raw/touchid_sudo.sh | bash
