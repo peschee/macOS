@@ -110,6 +110,14 @@ eval "$(jenv init -)"
 # @see https://github.com/mklement0/n-install
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || export PATH="$N_PREFIX/bin:$PATH"
 
+# pyenv
+# @see https://github.com/pyenv/pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 # avn
 # @see https://github.com/wbyoung/avn
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
