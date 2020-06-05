@@ -187,3 +187,6 @@ alias please='please'
 
 # List all TCP ports we're listening on
 alias ports='sudo lsof -iTCP -sTCP:LISTEN -n -P'
+
+# Shortcut for the custom "versions" function
+alias v='versions'

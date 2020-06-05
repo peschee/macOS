@@ -154,6 +154,7 @@ function artisan {
   please "$@";
 }
 
+# Display useful informatio about available versions of various tools
 function versions {
     echo -n 'Node: ' && node --version | tr -d 'v'
     echo -n 'NPM: ' && npm --version
