@@ -190,3 +190,6 @@ alias ports='sudo lsof -iTCP -sTCP:LISTEN -n -P'
 
 # Shortcut for the custom "versions" function
 alias v='versions'
+
+# https://stackoverflow.com/a/16906759
+alias git-remove-merged-branches="git branch --merged master | grep -v '^[ *]*master$' | xargs git branch -d"
