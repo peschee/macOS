@@ -123,7 +123,7 @@ alias reload="exec $SHELL -l"
 command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.eu/"
 
 # Homebrew
-alias bu='brew update; brew upgrade; brew cask upgrade; brew cleanup --prune=0 -s; rm -rf $(brew --cache)'
+alias bu='brew update; brew upgrade; brew upgrade --cask; brew cleanup --prune=0 -s; rm -rf $(brew --cache)'
 
 # Git stats
 alias git-stats='git shortlog -s -n'
