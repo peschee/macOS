@@ -76,7 +76,6 @@ plugins=(
     docker-compose
     git-extras
     last-working-dir
-    ng
     symfony2
     vagrant
     yarn
