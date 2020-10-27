@@ -143,4 +143,4 @@ if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion
 
 # fnm node version manager
 # @see https://github.com/Schniz/fnm
-eval "$(fnm env --multi)"
+eval "$(fnm env)"
