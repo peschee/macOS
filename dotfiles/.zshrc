@@ -99,7 +99,8 @@ setopt nonomatch
 
 # Init rbenv
 # @see https://github.com/rbenv/rbenv
-#eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 # jenv
 # @see http://www.jenv.be/
@@ -108,7 +109,7 @@ eval "$(jenv init -)"
 
 # n
 # @see https://github.com/mklement0/n-install
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || export PATH="$N_PREFIX/bin:$PATH"
+# export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || export PATH="$N_PREFIX/bin:$PATH"
 
 # pyenv
 # @see https://github.com/pyenv/pyenv
@@ -120,7 +121,7 @@ fi
 
 # avn
 # @see https://github.com/wbyoung/avn
-[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
+# [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
 
 # iterm2 shell integration
 # @see https://www.iterm2.com/documentation-shell-integration.html
@@ -141,4 +142,6 @@ if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# fnm node version manager
+# @see https://github.com/Schniz/fnm
+eval "$(fnm env --multi)"
